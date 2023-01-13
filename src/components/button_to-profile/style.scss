@@ -1,0 +1,20 @@
+.goprofile {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 23px;
+  &_btn {
+    margin-top: 21px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  &__text {
+    margin-right: 8px;
+  }
+}

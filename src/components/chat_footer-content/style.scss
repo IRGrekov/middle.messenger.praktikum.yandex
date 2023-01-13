@@ -1,0 +1,19 @@
+$grey2: #efefef;
+$grey1: #eaeaea;
+$grey3: #f8f8f8;
+$grey3: #999999;
+$blue2: #e4edfd;
+$blue: #3369f3;
+$blue2: #e4edfd;
+.correspondence {
+  &__content_text {
+    max-width: 380px;
+    background-color: $grey2;
+    border-radius: 0px 15px 15px 15px;
+    padding: 11px;
+  }
+  &__content:last-child > &__content_text {
+    background-color: $blue2;
+    max-width: 50px;
+  }
+}

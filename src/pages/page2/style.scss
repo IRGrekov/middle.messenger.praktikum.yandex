@@ -1,0 +1,13 @@
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.login {
+  &__wrapper {
+    width: 280px;
+    padding: 50px 30px 30px;
+  }
+}

@@ -1,0 +1,110 @@
+$grey2: #efefef;
+$grey1: #eaeaea;
+$grey3: #f8f8f8;
+$grey3: #999999;
+$blue2: #e4edfd;
+$blue: #3369f3;
+$blue2: #e4edfd;
+
+.chat {
+  &__top {
+    display: flex;
+    align-items: center;
+    padding: 20px 0px 10px 0px;
+    margin: 0 31.5px 48px 10px;
+    border-bottom: 1px solid $grey2;
+    justify-content: space-between;
+    &_avatar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &_img {
+      margin-right: 10px;
+      width: 34px;
+      height: 34px;
+      background-color: $grey2;
+      border-radius: 50%;
+    }
+  }
+
+  &__meny {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    cursor: pointer;
+    &_point:last-child {
+      margin: 0;
+    }
+    &_point {
+      width: 3px;
+      height: 3px;
+      background-color: black;
+      margin-bottom: 3px;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+  }
+  &__meny:hover {
+    background-color: $grey2;
+  }
+  &__meny:hover > &__meny_point {
+    background-color: $blue;
+  }
+}
+.meny {
+  position: fixed;
+  top: 75px;
+  border-radius: 12px;
+  z-index: 999;
+  right: 10px;
+  display: none;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 15px;
+  background-color: white;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.14);
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__content:first-child {
+    margin-bottom: 16px;
+  }
+  &__btn {
+    background: none;
+    cursor: pointer;
+    margin-right: 15px;
+    width: 22px;
+    height: 22px;
+    border: 1.5px solid $blue;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.meny_show {
+  display: flex !important;
+}
+.goprofile {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 23px;
+  &_btn {
+    display: flex;
+    align-items: center;
+  }
+
+  &__text {
+    margin-right: 8px;
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "parcelsbx",
+  "version": "0.0.1",
+  "description": "Parcel Sandbox",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel  src/index.html --no-cache --no-source-maps --target default --dist-dir  ./build",
+    "build": "parcel build src/index.html --no-cache --no-source-maps --target default --dist-dir ./build",
+    "watch": "parcel watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-inline-string": "^2.4.1",
+    "@parcel/transformer-sass": "^2.8.2",
+    "parcel": "^2.4.1"
+  },
+  "targets": {
+    "default": {
+      "sourceMap": false
+    }
+  },
+  "dependencies": {
+    "handlebars": "^4.7.7"
+  },
+  "main": "index.js"
+}

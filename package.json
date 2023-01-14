@@ -4,8 +4,8 @@
   "description": "Parcel Sandbox",
   "source": "src/index.html",
   "scripts": {
-    "start": "parcel  src/index.html --no-cache --no-source-maps --target default --dist-dir  ./build",
-    "build": "parcel build src/index.html --no-cache --no-source-maps --target default --dist-dir ./build",
+    "start": "parcel src/index.html --port 3000 --no-cache --no-source-maps --target default     ",
+    "dist": "parcel build src/index.html --port 3000 --no-cache --no-source-maps --target default  ./build",
     "watch": "parcel watch"
   },
   "author": "",
@@ -13,7 +13,8 @@
   "devDependencies": {
     "@parcel/transformer-inline-string": "^2.4.1",
     "@parcel/transformer-sass": "^2.8.2",
-    "parcel": "^2.4.1"
+    "parcel": "^2.4.1",
+    "sass": "^1.57.1"
   },
   "targets": {
     "default": {

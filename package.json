@@ -5,7 +5,7 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel src/index.html --port 3000 --no-cache --no-source-maps --target default     ",
-    "dist": "parcel build src/index.html --port 3000 --no-cache --no-source-maps --target default  ./build",
+    "build": "parcel build src/index.html --port 3000 --no-cache --no-source-maps --target default  ./build",
     "watch": "parcel watch"
   },
   "author": "",

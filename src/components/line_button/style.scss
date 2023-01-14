@@ -1,0 +1,12 @@
+$blue: #3369f3;
+
+.profile__back_btn {
+  background: $blue;
+  width: 28px;
+  padding: 0;
+  border-radius: 50%;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

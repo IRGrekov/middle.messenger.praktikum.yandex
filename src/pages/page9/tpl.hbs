@@ -1,0 +1,78 @@
+<section class="chat">
+	<div class="chat__item">
+		{{> button_to-profile href="#page3"id="go_profile"}}
+		{{> button_search }}
+
+		<ul href="#page10" class="chat__list">
+			{{> chat_element
+			name = 'Андрей'
+			text = 'Изображение'
+			time = '10:49'
+			notification = '2'
+			}}
+			{{> chat_element
+			name = 'Киноклуб'
+			text = 'Вы: стикер'
+			time = '12:00'
+			}}
+			{{> chat_element
+			name = 'Илья'
+			text = 'Друзья, у меня для вас особенный выпуск новостей!...'
+			time = '15:12'
+			notification = '4'
+			}}
+			{{> chat_element
+			name = 'Вадим'
+			text = 'Вы: Круто!'
+			time = 'пт'
+			}}
+			{{> chat_element
+			name = 'тет-а-теты'
+			text = 'И Human Interface Guidelines и Material Design рекомендуют...'
+			time = 'ср'
+			}}
+			{{> chat_element
+			name = '1, 2, 3'
+			text = 'Миллионы россиян ежедневно проводят десятки часов свое...'
+			time = 'пн'
+			}}
+			{{> chat_element
+			name = 'Design Destroyer'
+			text = 'В 2008 году художник Jon Rafman  начал собирать...'
+			time = 'пн'
+			}}
+			{{> chat_element
+			name = 'Day.'
+			text = 'Так увлёкся работой по курсу, что совсем забыл его анонсир...'
+			time = '1 Мая'
+			}}
+			{{> chat_element
+			name = 'Стас Рогозин'
+			text = 'Можно или сегодня или завтра вечером.'
+			time = '12 Апр'
+			}}
+		</ul>
+	</div>
+	{{> title style='correspondence__centre' text_title='Выберите чат чтобы отправить сообщение'}}
+	</div>
+</section>
+
+
+
+{{!-- <ul class="chat__list">
+	{{> chat_element
+	name = 'Андрей'
+	text = 'Изображение'
+	time = '10:49'
+	notification = '2'
+	}}
+	{{> chat_element
+	name = 'Иван'
+	text = 'Текст'
+	time = 'пт'
+	notification = ''
+	}}
+</ul>
+
+
+{{> button_search }} --}}

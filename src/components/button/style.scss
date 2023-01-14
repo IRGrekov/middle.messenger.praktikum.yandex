@@ -1,0 +1,54 @@
+$white: #ffffff;
+$blue: #3369f3;
+$red: #ff0000;
+
+.someBtn {
+  padding: 12px 0;
+  width: 100%;
+  margin-bottom: 14px;
+  background: $blue;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 13px;
+  text-align: center;
+  color: $white;
+  border: none;
+}
+
+.someBtn1 {
+  padding: 12px 0;
+  width: 33%;
+  margin-bottom: 14px;
+  background: $blue;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 13px;
+  text-align: center;
+  color: $white;
+}
+
+.profile__btn {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  text-align: start;
+  display: flex;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 13px;
+  // color: rgb(51, 105, 243);
+  color: $blue;
+  text-align: start;
+  padding: 10px 0px;
+}
+
+/*
+.buttonlast-child {
+  color: #ff0000;
+  border-bottom: none;
+}
+*/

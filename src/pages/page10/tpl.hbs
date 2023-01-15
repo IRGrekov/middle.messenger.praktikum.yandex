@@ -2,14 +2,19 @@
 	<div id="add_user_form" class="form">
 		<div class="form__update">
 			{{> title style='form__title' text_title='Добавить пользователя'}}
-			{{> inputform id = 'login' label='Логин' }}
+			<form>
+				{{> inputform id = 'login' label='Логин' }}
+			</form>
 			{{> button id="remove_user_form" style_btn='someBtn' value='Добавить' }}
 		</div>
 	</div>
 	<div id="dell_user_form" class="form">
 		<div class="form__update">
 			{{> title style='form__title' text_title='Удалить пользователя'}}
-			{{> inputform id = 'login1' label='Логин' }}
+			<form>
+
+				{{> inputform id = 'login1' label='Логин' }}
+			</form>
 			{{> button id="remove_user_form_update" style_btn='someBtn' value='Удалить' }}
 		</div>
 	</div>

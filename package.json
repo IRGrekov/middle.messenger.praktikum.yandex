@@ -4,7 +4,7 @@
   "description": "Parcel Sandbox",
   "source": "src/index.html",
   "scripts": {
-    "start": "parcel src/index.html --port 3000 --no-cache --no-source-maps --target default     ",
+    "start": "parcel src/index.html --no-cache --no-source-maps --target default     ",
     "build": "parcel build src/index.html  --no-cache --no-source-maps --target default  ",
     "watch": "parcel watch"
   },
@@ -25,5 +25,7 @@
     "handlebars": "^4.7.7"
   },
   "main": "index.js",
-  "engines": {}
+  "engine": {
+    "node": ">=12.0.0"
+  }
 }

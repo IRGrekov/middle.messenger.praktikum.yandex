@@ -3,13 +3,16 @@
 	<div class="login__wrapper">
 		<div class="login__item">
 			{{> title text_title='Регистрация'}}
-			{{> inputform name='email' label='Почта' }}
-			{{> inputform name='login' label='Логин' }}
-			{{> inputform name='first_name' label='Имя' }}
-			{{> inputform name='second_name' label='Фамилия' }}
-			{{> inputform name='phone' label='Телефон' }}
-			{{> inputform name='password' typetext='password' label='Пароль'}}
-			{{> inputform name='password' typetext='password' label='Пароль (еще раз)'}}
+			<form>
+
+				{{> inputform id='inputform3_page2' name='email' label='Почта' }}
+				{{> inputform id='inputform4_page2' name='login' label='Логин' }}
+				{{> inputform id='inputform5_page2' name='first_name' label='Имя' }}
+				{{> inputform id='inputform6_page2' name='second_name' label='Фамилия' }}
+				{{> inputform id='inputform7_page2' name='phone' label='Телефон' }}
+				{{> inputform id='inputform1_page2' name='password' typetext='password' label='Пароль'}}
+				{{> inputform id='inputform2_page2' name='password' typetext='password' label='Пароль (еще раз)'}}
+			</form>
 		</div>
 
 		<div class="login__item">

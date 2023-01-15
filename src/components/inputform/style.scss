@@ -1,0 +1,41 @@
+$blue: #3369f3;
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  &__wrapper {
+    width: 280px;
+    padding: 50px 30px 30px;
+  }
+
+  &__subtext {
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 9px;
+    line-height: 9px;
+    color: #999999;
+  }
+
+  &__input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid $blue;
+    color: #999999;
+  }
+
+  &__form {
+    margin-bottom: 16px;
+  }
+
+  &__form:last-child {
+    margin-bottom: 159px;
+  }
+}

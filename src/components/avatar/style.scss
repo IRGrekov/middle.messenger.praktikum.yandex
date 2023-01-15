@@ -1,0 +1,52 @@
+$blue: #3369f3;
+$grey: #e5e5e5;
+$grey2: #efefef;
+$white: #ffffff;
+
+$black: rgba(0, 0, 0, 0.5);
+
+.profile {
+  &__item-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__circle {
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $grey;
+    margin-bottom: 21px;
+    transition: 0.3s linear;
+    cursor: pointer;
+  }
+  &__circle:hover {
+    background: $black;
+  }
+  &__circle:hover > &__avatar_text {
+    opacity: 1;
+  }
+  &__circle:hover > &__avatar path {
+    fill: black;
+    opacity: 0.5;
+  }
+  &__avatar path {
+    transition: 0.3s linear;
+  }
+  &__avatar {
+    z-index: 2;
+  }
+  &__avatar_text {
+    position: absolute;
+    color: $white;
+    width: 64px;
+    text-align: center;
+    z-index: 3;
+    opacity: 0;
+  }
+}

@@ -1,0 +1,20 @@
+<div class="profile">
+	<div class="profile__item">
+		<div class="profile__item-wrapper">
+			{{> line_button id='to_chats'}}
+		</div>
+	</div>
+
+	<div class="profile__item">
+		{{> avatar}}
+		<div class="profile__form_wrapper">
+
+			{{> inputform_profile typetext='password' label='Старый пароль' name='oldPassword' text='jnuhjbgy' }}
+			{{> inputform_profile typetext='password' label='Новый пароль' name='newPassword' text='jnuhjbgyds' }}
+			{{> inputform_profile typetext='password' label='Повторите новый пароль' name='newPassword' text='jnuhjbgyds' }}
+		</div>
+
+		{{> button id='exit1' style_btn='someBtn1' value='Сохранить' }}
+	</div>
+
+</div>

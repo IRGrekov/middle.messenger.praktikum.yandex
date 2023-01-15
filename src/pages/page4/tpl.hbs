@@ -1,0 +1,22 @@
+<div class="profile">
+	<div class="profile__item">
+		<div class="profile__item-wrapper">
+			{{> line_button id='to_chats'}}
+		</div>
+	</div>
+
+	<div class="profile__item">
+		{{> avatar}}
+		<div class="profile__form_wrapper">
+			{{> inputform_profile label='Пачта' text='pochta@yandex.ru' }}
+			{{> inputform_profile label='Логин'text='ivanivanov' }}
+			{{> inputform_profile label='Имя' text='Иван'}}
+			{{> inputform_profile label='Фамилия' text='Фамилия' }}
+			{{> inputform_profile label='Имя в чате' text='Иван' }}
+			{{> inputform_profile label='Телефон' text='+7 (909) 967 30 30' }}
+		</div>
+		{{> button id='exit2' style_btn='someBtn1' value='Сохранить' }}
+
+	</div>
+
+</div>

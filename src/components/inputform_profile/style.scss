@@ -1,0 +1,42 @@
+$grey: #e5e5e5;
+
+.profile {
+  &__form_wrapper {
+    margin-bottom: 60px;
+  }
+  &__form {
+    width: 510px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  &__form:last-child {
+    border-bottom: none;
+  }
+  &__input {
+    text-align: right;
+    background: transparent;
+    border: none;
+  }
+  // &__item:first-child {
+  //   width: 64px;
+  //   background-color: $grey;
+  //   height: 720px;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  // }
+  // &__item:last-child {
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   width: 100%;
+  // }
+  // &__item-wrapper {
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   flex-direction: column;
+  // }
+}

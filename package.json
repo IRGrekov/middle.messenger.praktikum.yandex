@@ -4,8 +4,8 @@
   "description": "Parcel Sandbox",
   "source": "src/index.html",
   "scripts": {
-    "start": "parcel src/index.html --no-cache --no-source-maps --target default     ",
-    "build": "parcel build src/index.html  --no-cache --no-source-maps --target default  ",
+    "start": "parcel src/index.html --port 3000 --no-cache --no-source-maps --target default --dist-dir  ./build  ",
+    "build": "parcel  build src/index.html --no-cache --no-source-maps --target default  ",
     "watch": "parcel watch"
   },
   "author": "",

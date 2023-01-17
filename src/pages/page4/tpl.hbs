@@ -10,16 +10,15 @@
 		<div class="profile__form_wrapper">
 			<form>
 
-				{{> inputform_profile label='Пачта' text='pochta@yandex.ru' }}
-				{{> inputform_profile label='Логин'text='ivanivanov' }}
-				{{> inputform_profile label='Имя' text='Иван'}}
-				{{> inputform_profile label='Фамилия' text='Фамилия' }}
-				{{> inputform_profile label='Имя в чате' text='Иван' }}
-				{{> inputform_profile label='Телефон' text='+7 (909) 967 30 30' }}
-			</form>
+				{{> inputform_profile label='Пачта' text='pochta@yandex.ru' name='email' read='readonly'}}
+				{{> inputform_profile label='Логин' name='login' text='ivanivanov' }}
+				{{> inputform_profile label='Имя' name='first_name' text='Иван'}}
+				{{> inputform_profile label='Фамилия' name='second_name' text='Фамилия' }}
+				{{> inputform_profile label='Имя в чате' name='display_name' text='Иван' }}
+				{{> inputform_profile label='Телефон' name='phone' text='+7 (909) 967 30 30' }}
 		</div>
 		{{> button id='exit2' style_btn='someBtn1' value='Сохранить' }}
-
+		</form>
 	</div>
 
 </div>

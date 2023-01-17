@@ -27,5 +27,13 @@
   "main": "index.js",
   "engine": {
     "node": ">=12.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IRGrekov/middle.messenger.praktikum.yandex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/IRGrekov/middle.messenger.praktikum.yandex/issues"
+  },
+  "homepage": "https://github.com/IRGrekov/middle.messenger.praktikum.yandex#readme"
 }

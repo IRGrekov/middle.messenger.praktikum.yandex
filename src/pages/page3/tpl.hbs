@@ -2,7 +2,7 @@
 	<div class="profilemodal__wrapperr">
 		<div class="form__update">
 			{{> title style='form__title' text_title='Загрузите файл'}}
-			{{>text__transition style_text='form__new-img' text='Выбрать файл на компьютере'}}
+			{{>text__transition name='avatar' style_text='form__new-img' text='Выбрать файл на компьютере'}}
 			{{> button style_btn='someBtn' value='Поменять' }}
 		</div>
 	</div>
@@ -27,7 +27,6 @@
 				{{> inputform_profile label='Фамилия' name='second_name' text='Фамилия' }}
 				{{> inputform_profile label='Имя в чате' name='display_name' text='Иван' }}
 				{{> inputform_profile label='Телефон' name='phone' text='+7 (909) 967 30 30' }}
-			</form>
 		</div>
 		<div class="profile__redact">
 			<div class="profile__transition">
@@ -38,7 +37,10 @@
 			</div>
 			<div class="profile__transition">
 				{{> button id='exit_profile' style_btn='profile__btn' value='Выйти' }}
+
 			</div>
+			</form>
 		</div>
+
 	</div>
 </div>

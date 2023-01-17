@@ -17,9 +17,9 @@ window.addEventListener("click", (e) => {
 	}
 	const loginInput = document.querySelector("#login");
 	console.log(loginInput.value);
-	if (loginInput.value.length === 0) {
-		return
-	}
+	// if (loginInput.value.length === 0) {
+	// 	return
+	// }
 
 	window.location.href = "./#page10"
 })

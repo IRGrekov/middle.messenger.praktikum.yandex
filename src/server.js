@@ -4,10 +4,7 @@ const express = require('express');
 
 const app = express();
 const PORT = 3000;
-const path = require('path');
-app.use("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "src\index.html"));
-});
+
 app.use(express.static('dist'));
 
 app.listen(PORT, () => {

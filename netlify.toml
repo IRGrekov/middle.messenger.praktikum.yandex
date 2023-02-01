@@ -1,4 +1,3 @@
-
 # Global settings applied to the whole site.
 #
 # “base” is the directory to change to before starting build. If you set base:
@@ -7,10 +6,5 @@
 # “publish” is the directory to publish (relative to the root of your repo).
 
 [build]
-  publish = "dist" 
+  publish = "dist"
   command = "npm run build"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200

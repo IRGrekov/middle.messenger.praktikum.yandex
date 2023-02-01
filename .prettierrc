@@ -5,10 +5,7 @@
   "trailingComma": "all",
   "overrides": [
     {
-      "files": [
-        "*.html",
-        "*.hbs"
-      ],
+      "files": ["*.html", "*.hbs"],
       "options": {
         "singleQuote": false
       }

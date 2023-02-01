@@ -10,3 +10,10 @@ npm run start
 
 npm run dev
 
+### Сборка проекта (в директорий build):
+npm run build
+
+__
+1. rm -rf node_modules .parcel-cache dist package-lock.json
+2. npm install
+3. npm run dev

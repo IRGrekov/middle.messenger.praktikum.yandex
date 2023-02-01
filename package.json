@@ -31,7 +31,6 @@
     "nanoid": "3.3.1"
   },
   "description": "## Установка",
-  "main": "handlebars.config.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/IRGrekov/middle.messenger.praktikum.yandex.git"

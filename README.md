@@ -1,6 +1,6 @@
 # Веб-приложение мессенджер sprint_2.
 
-## netlify:https://kaleidoscopic-baklava-dea0c1.netlify.app/
+## https://jocular-faloodeh-118b0b.netlify.app/
 ## Установка
 
 ### Запуск проекта локально (Node JS, http://localhost:3000):

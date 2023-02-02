@@ -3,12 +3,14 @@ import './errorForm.less';
 
 interface IButtonProps {
   errorNumber: number;
+  text_error: string;
 }
 
 export class ErrorForm extends Block<IButtonProps> {
-  constructor({ errorNumber, }: IButtonProps) {
+  constructor({ errorNumber, text_error }: IButtonProps) {
     super({
       errorNumber,
+      text_error,
     });
   }
 
@@ -27,7 +29,7 @@ export class ErrorForm extends Block<IButtonProps> {
     v34.8h-27.9v145.1h145.1v-27.9h34.8v27.9h27.9V362.4z" />
           </svg>
                 <p class="error-text">
-                    Ошибка <b>{{errorNumber}}</b>. Мы уже фиксим)
+                    Ошибка <b>{{errorNumber}}</b>. {{text_error}}
                 </p>
                 <nav>
                     <a href="../../index.html">На главную</a>

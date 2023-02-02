@@ -23,8 +23,11 @@ export class AuthorisationPage extends Block<{ onClick: Function }> {
     console.log(values)
 
     const validations = {
+      //login: value => value = '^(?=.{3,20}$)([a-zA-Z0-9_-]*[a-zA-Z_-][a-zA-Z0-9_-]*)$'
       login: value => value.length >= 3 && value.length <= 20,
-      password: value => value.length >= 8 && value.length <= 20,
+      password: value => value.length >= 3 && value.length <= 40,
+
+      // password: value => value = '^(?=.*?[A-ZА-ЯЁ])(?=.*?[0-9]).{8,40}$',
       //!value.includes("@"),
 
     }
@@ -51,15 +54,15 @@ export class AuthorisationPage extends Block<{ onClick: Function }> {
     // language=hbs
     return `
 
-    <div class="login">
+    <main class="login">
     <div class="login__wrapper">
       <div class="login__item">
         {{{ Title style='login__title' text_title='Вход' }}}  
         <form id="loginData">
             <div class="input-block">
    
-    {{{ InputField classInput="login__input" labelText="Логин:"  inputId="login" inputName="login" regexp="${REGEXP_LOGIN}" }}}
-    {{{ InputField classInput="login__input" labelText="Пароль:" inputId="password" inputType="password" inputName="password" regexp="${REGEXP_PASSWORD}"   }}}
+    {{{ InputField classInput="login__input" labelText="Логин:" errorText="Должно содержать от 3 до 8 символов" inputId="login" inputName="login" regexp="${REGEXP_LOGIN}" }}}
+    {{{ InputField classInput="login__input" labelText="Пароль:" errorText="Должно содержать от 8 до 40 символов + Заглавный символ" inputId="password" inputType="password" inputName="password" regexp="${REGEXP_PASSWORD}"   }}}
 
 
     <div class="login__item">
@@ -75,8 +78,7 @@ export class AuthorisationPage extends Block<{ onClick: Function }> {
   </div>
 
 </div>
-</div>
-
+</main>
 
     `;
   }

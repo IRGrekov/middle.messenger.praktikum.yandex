@@ -2,8 +2,8 @@ import { renderDom } from '../../services/renderDom';
 import ErrorForm from '../../components/ErrorForm';
 
 const errorPage = new ErrorForm({
-  errorNumber: 500,
-  text_error: "Мы уже фиксим",
+  errorNumber: 404,
+  text_error: "Не туда попали",
 });
 
 renderDom('#app', errorPage);

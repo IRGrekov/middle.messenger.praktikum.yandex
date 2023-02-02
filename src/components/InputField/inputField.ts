@@ -12,7 +12,8 @@ interface IInputField {
   inputValue?: string;
   inputPlaceholder?: string;
   regexp: string;
-  classInput?: string
+  classInput?: string;
+  errorText: string;
 
 
 }
@@ -43,6 +44,9 @@ export class InputField extends Block<IInputField> {
                       class="${classInput}"
                       
             }}}
+            <div class="errorInput">
+           {{errorText}}
+            </div>
 
         </div>  
 

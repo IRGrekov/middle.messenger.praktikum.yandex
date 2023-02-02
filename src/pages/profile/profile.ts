@@ -57,7 +57,7 @@ export class ProfilePage extends Block<IProfile> {
 
     // language=hbs
     return `
-    <div class='allHtml'>
+    <main class='allHtml'>
     <div id="profilemodal" class="profilemodal">
     <div class="profilemodal__wrapperr">
       <div class="form__update">
@@ -119,7 +119,7 @@ export class ProfilePage extends Block<IProfile> {
                   </form>
                 </div>
               </div>
-              </div>
+              </main>
   
     `;
   }

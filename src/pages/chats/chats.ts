@@ -107,7 +107,7 @@ export class MessagesPage extends Block<IChatList> {
   render() {
     // language=hbs
     return `
-    <section class="chat">
+    <main class="chat">
     <div class="chat__item">
     <div class="page-container">
     <div class="chat__item">
@@ -179,6 +179,9 @@ export class MessagesPage extends Block<IChatList> {
   </svg>
 
 </button>
+</div>
+</div>
+</main> 
     `;
   }
 }

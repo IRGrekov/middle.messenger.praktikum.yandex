@@ -8,7 +8,7 @@ abstract class Block<Props extends {}> {
     FLOW_CDM: 'flow:component-did-mount',
     FLOW_CDU: 'flow:component-did-update',
     FLOW_RENDER: 'flow:render',
-  };
+  } as const;
 
   public id = nanoid(6);
 
@@ -52,7 +52,7 @@ abstract class Block<Props extends {}> {
     return { props, children };
   }
 
-  protected initChildren() {}
+  protected initChildren() { }
 
   private _registerEvents(eventBus: EventBus) {
     eventBus.on(Block.EVENTS.INIT, this.init.bind(this));
@@ -69,7 +69,7 @@ abstract class Block<Props extends {}> {
     this.componentDidMount();
   }
 
-  componentDidMount() {}
+  componentDidMount() { }
 
   dispatchComponentDidMount() {
     this.eventBus().emit(Block.EVENTS.FLOW_CDM);

@@ -1,6 +1,5 @@
 node_modules
 .parcel-cache
-.package-lock
 .idea
 dist
 /.env

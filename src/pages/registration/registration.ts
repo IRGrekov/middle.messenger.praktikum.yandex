@@ -11,12 +11,12 @@ export class RegistrationPage extends Block<{ onClick: Function }> {
       // onClick: () => this.validate(),
       // goNext1: 
       events: {
-        submit: (e: any) => this.goNext(e),
+        submit: (e: Event) => this.goNext(e),
       }
     });
   }
 
-  goNext = (e: any) => {
+  goNext = (e: Event) => {
     console.log("NEXT");
     e.preventDefault();
     console.log(e);

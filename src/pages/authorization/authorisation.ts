@@ -9,12 +9,12 @@ export class AuthorisationPage extends Block<{ onClick: Function }> {
       // onClick: () => this.validate(),
       // goNext: 
       events: {
-        submit: (e: any) => this.goNext(e),
+        submit: (e: Event) => this.goNext(e),
       }
     });
   }
 
-  goNext = (e: any) => {
+  goNext = (e: Event) => {
     console.log("NEXT");
     e.preventDefault();
     console.log(e);

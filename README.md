@@ -2,7 +2,7 @@
 
 ## https://jocular-faloodeh-118b0b.netlify.app/
 ## Установка
-
+ npm i 
 ### Запуск проекта локально (Node JS, http://localhost:3000):
 
 npm run start
@@ -16,5 +16,5 @@ npm run build
 
 __
 1. rm -rf node_modules .parcel-cache dist package-lock.json
-2. npm install
+2. npm i 
 3. npm run dev

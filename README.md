@@ -1,4 +1,4 @@
-# Веб-приложение мессенджер sprint_2.
+# Веб-приложение мессенджер sprint_3.
 
 ## https://effortless-meerkat-f4514b.netlify.app
 ## Установка

@@ -36,9 +36,6 @@ export default class AuthAPI {
     return this.http.post('/signin', data);
   }
 
-  changePassword(data: changePasswordData): Promise<string> {
-    return this.http.put('/put', data);
-  }
 
   logout(): Promise<string> {
     return this.http.post('/logout');

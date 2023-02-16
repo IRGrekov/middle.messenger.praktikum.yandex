@@ -1,4 +1,4 @@
-import UserAPI, { IProfileData } from '../api/UserAPI';
+import UserAPI, { IProfileData, changePasswordData } from '../api/UserAPI';
 
 class UserController {
   private api: UserAPI;
@@ -10,6 +10,12 @@ class UserController {
   async updateProfile(profile: IProfileData) {
     await this.api.update(profile);
   }
+
+  async changePassword(data: changePasswordData) {
+    console.log("222")
+    await this.api.changePassword(data);
+  }
+
 }
 
 export default new UserController();

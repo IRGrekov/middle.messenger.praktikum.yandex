@@ -16,10 +16,6 @@ class AuthController {
     await this.api.signIn(data);
   }
 
-  async changePassword(data: changePasswordData) {
-    await this.api.changePassword(data);
-  }
-
   async logout() {
     await this.api.logout();
   }

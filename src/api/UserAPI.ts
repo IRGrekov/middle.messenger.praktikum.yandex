@@ -1,12 +1,17 @@
 import HTTPTransport from '../common/HTTPTransport';
 
 export interface IProfileData {
-  first_name: 'string';
-  second_name: 'string';
-  display_name: 'string';
-  login: 'string';
-  email: 'string';
-  phone: 'string';
+  first_name: string;
+  second_name: string;
+  display_name: string;
+  login: string;
+  email: string;
+  phone: string;
+}
+
+export interface changePasswordData {
+  oldPassword: string;
+  newPassword: string;
 }
 
 export default class UserAPI {
@@ -18,5 +23,11 @@ export default class UserAPI {
 
   update(profile: IProfileData): Promise<string> {
     return this.http.put('/profile', profile);
+  }
+
+
+  changePassword(data: changePasswordData): Promise<string> {
+    console.log("1")
+    return this.http.put('/password', data);
   }
 }

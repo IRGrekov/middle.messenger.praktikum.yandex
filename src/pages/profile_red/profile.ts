@@ -34,8 +34,11 @@ export class ProfilePage_red extends Block<IProfile_red> {
       { elementId: 'newPassword', regexp: REGEXP_PASSWORD },
       { elementId: 'oldPassword', regexp: REGEXP_PASSWORD },
     );
+    console.log("3")
+    console.log(data)
     if (data) {
-      AuthController.changePassword(data as changePasswordData)
+      console.log(data)
+      UserController.changePassword(data as changePasswordData)
         .then(() => alert('Профиль успешно обновлен!'))
         .catch((error) => alert(`Ошибка выполнения запроса авторизации! ${error ? error.reason : ''}`));
     }
@@ -71,8 +74,8 @@ export class ProfilePage_red extends Block<IProfile_red> {
   <div class="profile__form_wrapper">
   <form class="profile-form__form">
 
-  {{{ InputFieldProfile classInput="profile__input"  labelText="Пароль:"  errorText="Должно содержать от 8 до 40 символов + Заглавный символ" inputId="oldPassword" inputType="password" inputName="password" regexp="${REGEXP_PASSWORD}" }}}
-  {{{ InputFieldProfile classInput="profile__input"  labelText="Новый Пароль:"  errorText="Должно содержать от 8 до 40 символов + Заглавный символ" inputId="newPassword" inputType="password_new" inputName="password_new" regexp="${REGEXP_PASSWORD}" }}}
+  {{{ InputFieldProfile classInput="profile__input"  labelText="Пароль:"  errorText="Должно содержать от 8 до 40 символов + Заглавный символ" inputId="oldPassword" inputType="password" inputName="oldPassword" regexp="${REGEXP_PASSWORD}" }}}
+  {{{ InputFieldProfile classInput="profile__input"  labelText="Новый Пароль:"  errorText="Должно содержать от 8 до 40 символов + Заглавный символ" inputId="newPassword" inputType="password_new" inputName="newPassword" regexp="${REGEXP_PASSWORD}" }}}
 
 
 <div class="profile__transition">

@@ -1,6 +1,6 @@
 # Веб-приложение мессенджер sprint_2.
 
-## https://jocular-faloodeh-118b0b.netlify.app/
+## https://effortless-meerkat-f4514b.netlify.app
 ## Установка
  npm i 
 ### Запуск проекта локально (Node JS, http://localhost:3000):

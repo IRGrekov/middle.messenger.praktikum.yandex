@@ -58,13 +58,7 @@ export class ProfilePage_red extends Block<IProfile_red> {
 
     <div class="profile">
     <div class="profile__item">
-    <button id='{{id}}' class="profile__back_btn">
-    <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="13" y="6.80005" width="11" height="1.6" transform="rotate(-180 13 6.80005)" fill="white" />
-      <path d="M6 11L2 6L6 1" stroke="white" stroke-width="1.6" />
-    </svg>
-  
-  </button>
+  {{{ Button_back }}}
     </div>
   
     <div class="profile__item">

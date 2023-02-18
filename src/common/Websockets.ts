@@ -47,8 +47,15 @@ export class WS {
 
   private onReceiveMessage(event: MessageEvent) {
     console.log('Получены данные', event.data);
-    const data = JSON.parse(event.data);
-
+    let data
+    try {
+      data = JSON.parse(event.data);
+    } catch (error) {
+      console.error(error);
+      return
+      // Expected output: ReferenceError: nonExistentFunction is not defined
+      // (Note: the exact output may be browser-dependent)
+    }
     /*
      Если приходит архив сообщений
       */

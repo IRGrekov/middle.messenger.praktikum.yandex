@@ -15,6 +15,7 @@ import { ErrorForm } from './components/ErrorForm/errorForm';
 import { ProfilePage_red } from './pages/profile_red/profile';
 import { Text_transition } from './components/Text_transition/Text_transition';
 import { Title } from './components/Title/title';
+import { Button_back } from './components/Button_back/Button_back';
 // eslint-disable-next-line import/no-cycle
 import MessagesPage from './pages/messages';
 import { WS } from './common/Websockets';
@@ -23,6 +24,7 @@ import { InputFieldProfile } from './components/InputFieldProfile/InputFieldProf
 registerComponent(Button, 'Button');
 registerComponent(InputFieldProfile, 'InputFieldProfile');
 registerComponent(Avatar, 'Avatar');
+registerComponent(Button_back, 'Button_back');
 registerComponent(Input, 'Input');
 registerComponent(InputField, 'InputField');
 registerComponent(InputMas, 'InputMas');
@@ -36,7 +38,7 @@ registerComponent(Message, 'Message');
 const router = new Router();
 export const ws = new WS();
 
-router.use('/signin', AuthorizationPage)
+router.use('/', AuthorizationPage)
   .use('/signup', RegistrationPage)
   .use('/profile', ProfilePage)
   .use('/profilePage_red', ProfilePage_red)

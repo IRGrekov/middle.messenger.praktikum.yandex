@@ -169,7 +169,7 @@ export class MessagesPage extends Block<IChatList> {
 
     // language=hbs
     return `
-    
+    <main class='allHtml'>
         <div class="messages-page-container">
             <div class="block-left">
                 <div class="link-container">
@@ -249,6 +249,7 @@ export class MessagesPage extends Block<IChatList> {
                 </form>
             </div>
         </div>
+        </main>
     `;
   }
 }

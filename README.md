@@ -1,6 +1,6 @@
 # Веб-приложение мессенджер sprint_3.
 
-## https://stately-daifuku-eea315.netlify.app
+## https://subtle-meerkat-ff5a8a.netlify.app
 ## Установка
  npm i 
 ### Запуск проекта локально (Node JS, http://localhost:3000):

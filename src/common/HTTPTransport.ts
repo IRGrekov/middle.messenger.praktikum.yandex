@@ -11,6 +11,18 @@ interface Options {
   data?: any;
 }
 
+type IData = Record<string, string>
+
+function queryStringify(data: IData) {
+  if (typeof data !== 'object') {
+    throw new Error('Data must be object')
+  }
+
+  const keys = Object.keys(data)
+  return keys.reduce((result, key, index) => {
+    return `${result}${key}=${data[key]}${index < keys.length - 1 ? '&' : ''}`
+  }, '?')
+}
 export default class HTTPTransport {
   static API_URL = 'https://ya-praktikum.tech/api/v2';
 
@@ -58,6 +70,8 @@ export default class HTTPTransport {
 
     return new Promise((resolve, reject) => {
       const xhr = new XMLHttpRequest();
+      const isGet = method === Method.GET
+      xhr.open(method, isGet && !!data ? `${url}${queryStringify(data)}` : url)
       xhr.open(method, url);
 
       xhr.onreadystatechange = () => {

@@ -3,7 +3,8 @@ import { validateInputs } from '../../common/utils';
 import { REGEXP_PASSWORD } from '../../common/const';
 import Block from '../../common/Block';
 import UserController from '../../controllers/UserController';
-import { IProfileData } from '../../api/UserAPI';
+import { IProfileData, } from '../../api/UserAPI';
+import { changeAvatarData } from '../../api/UserAPI';
 import { changePasswordData } from '../../api/AuthAPI';
 import AuthController from '../../controllers/AuthController';
 import Router from '../../common/Router';
@@ -13,6 +14,9 @@ interface IProfileProps_red {
   oldPassword: string;
 }
 
+interface ProfileAvater {
+  avatar: string;
+}
 interface IProfile_red extends IProfileProps_red {
   onClick: Function;
 }

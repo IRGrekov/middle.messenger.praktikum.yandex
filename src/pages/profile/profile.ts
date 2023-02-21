@@ -6,6 +6,7 @@ import {
 import Block from '../../common/Block';
 import UserController from '../../controllers/UserController';
 import { IProfileData } from '../../api/UserAPI';
+import { changeAvatarData } from '../../api/UserAPI';
 import AuthController from '../../controllers/AuthController';
 import Router from '../../common/Router';
 
@@ -20,6 +21,37 @@ interface IProfileProps {
   avatar?: string;
 }
 
+
+// export default function sendAvatar(e) {
+//   e.preventDefault();
+//   let target = e.target;
+//   console.log(target.files[0]);
+
+//   // const file = input.files?. [2]
+//   let div = document.getElementsByClassName('avatar')[0];
+//   div.setAttribute('src', target.files[0].name)
+//   let formata = new FormData();
+
+//   formData.append('avatar', target.files[0]);
+//   console.log(Array.from(formData.entries()));
+//   UsersController.changeAvatar(formata) ;
+
+
+
+// case UPLOAD_PHOTO: {
+//   const formData = new FormData();
+//   const image = state.target!.files?.item(0);
+
+//   if (!image) return;
+
+//   formData.append('avatar', image);
+
+//   state.user = await User.updatePhoto(formData);
+//   state.items = Object.entries(state.user!)
+//       .map(([name, value]) => ({name, value} as Item))
+//       .filter((e) => e.value !== null && e.name !== 'avatar');
+//   break;
+// }
 interface IProfile extends IProfileProps {
   onClick: Function;
 }
@@ -52,6 +84,7 @@ export class ProfilePage extends Block<IProfile> {
     }
   }
 
+
   render() {
     const email = !this.props.email ? undefined : `"${this.props.email}"`;
     const login = !this.props.login ? undefined : `"${this.props.login}"`;
@@ -63,6 +96,7 @@ export class ProfilePage extends Block<IProfile> {
 
     // language=hbs
     return `
+    <main class='allHtml'>
 
     <div class="profile">
     <div class="profile__item">

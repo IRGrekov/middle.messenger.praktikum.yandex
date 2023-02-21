@@ -12,8 +12,13 @@ class UserController {
   }
 
   async changePassword(data: changePasswordData) {
-    console.log("222")
+    //console.log("222")
     await this.api.changePassword(data);
+  }
+
+  async changeAvatar(data: FormData) {
+    console.log("222")
+    await this.api.changeAvatarData(data);
   }
 
 }

@@ -21,6 +21,9 @@ export interface changePasswordData {
   newPassword: string;
 }
 
+// export interface changeAvatarData {
+//   avatar: string;
+// }
 export default class AuthAPI {
   protected http: HTTPTransport;
 

@@ -14,6 +14,8 @@ export interface changePasswordData {
   newPassword: string;
 }
 
+
+
 export default class UserAPI {
   protected http: HTTPTransport;
 
@@ -27,7 +29,12 @@ export default class UserAPI {
 
 
   changePassword(data: changePasswordData): Promise<string> {
-    console.log("1")
+    //console.log("1")
     return this.http.put('/password', data);
   }
+
+  changeAvatarData(data: FormData): Promise<string> {
+    return this.http.put('/profile/avatar', data);
+  }
 }
+

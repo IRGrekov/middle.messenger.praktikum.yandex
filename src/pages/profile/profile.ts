@@ -22,36 +22,7 @@ interface IProfileProps {
 }
 
 
-// export default function sendAvatar(e) {
-//   e.preventDefault();
-//   let target = e.target;
-//   console.log(target.files[0]);
 
-//   // const file = input.files?. [2]
-//   let div = document.getElementsByClassName('avatar')[0];
-//   div.setAttribute('src', target.files[0].name)
-//   let formata = new FormData();
-
-//   formData.append('avatar', target.files[0]);
-//   console.log(Array.from(formData.entries()));
-//   UsersController.changeAvatar(formata) ;
-
-
-
-// case UPLOAD_PHOTO: {
-//   const formData = new FormData();
-//   const image = state.target!.files?.item(0);
-
-//   if (!image) return;
-
-//   formData.append('avatar', image);
-
-//   state.user = await User.updatePhoto(formData);
-//   state.items = Object.entries(state.user!)
-//       .map(([name, value]) => ({name, value} as Item))
-//       .filter((e) => e.value !== null && e.name !== 'avatar');
-//   break;
-// }
 interface IProfile extends IProfileProps {
   onClick: Function;
 }
@@ -83,7 +54,9 @@ export class ProfilePage extends Block<IProfile> {
         .catch((error) => alert(`Ошибка выполнения запроса обновления профиля! ${error ? error.reason : ''}`));
     }
   }
-
+  changeAvatar(avatar) {
+    console.log('changeAvatar', avatar)
+  }
 
   render() {
     const email = !this.props.email ? undefined : `"${this.props.email}"`;
@@ -92,6 +65,7 @@ export class ProfilePage extends Block<IProfile> {
     const secondName = !this.props.second_name ? undefined : `"${this.props.second_name}"`;
     const displayName = !this.props.display_name ? undefined : `"${this.props.display_name}"`;
     const phone = !this.props.phone ? undefined : `"${this.props.phone}"`;
+    const funk = this.changeAvatar
     // const avatar = !this.props.avatar ? '"https://previews.123rf.com/images/denizjdazel/denizjdazel1902/denizjdazel190200045/124841367-.jpg?fj=1"' : `"${this.props.avatar}"`;
 
     // language=hbs
@@ -104,7 +78,8 @@ export class ProfilePage extends Block<IProfile> {
     </div>
   
     <div class="profile__item">
-    {{{ Avatar }}}
+    {{{ Avatar changeAvatar=${funk} }}}
+    
 
   {{{ Title style='profile__title' text_title='Настройка профиля' }}}  
   <div class="profile__form_wrapper">

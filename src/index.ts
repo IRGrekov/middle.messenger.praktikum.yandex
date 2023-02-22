@@ -39,12 +39,12 @@ const router = new Router();
 export const ws = new WS();
 
 router.use('/', AuthorizationPage)
-  .use('/signup', RegistrationPage)
-  .use('/profile', ProfilePage)
-  .use('/profilePage_red', ProfilePage_red)
-  .use('/messages', MessagesPage)
+  .use('/sign-up', RegistrationPage)
+  .use('/settings ', ProfilePage)
+  .use('/settings_red', ProfilePage_red)
+  .use('/messenger ', MessagesPage)
   .use('/error500', ErrorForm)
   .use('/error404', ErrorForm)
-  .use('/', AuthorizationPage);
+
 
 router.start();

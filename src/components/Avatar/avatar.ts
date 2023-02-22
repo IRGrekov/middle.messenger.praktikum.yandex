@@ -10,6 +10,7 @@ interface IAvatarProps {
 }
 
 interface IAvatar extends IAvatarProps {
+  avatar: string;
   events: {
     change: Function;
   };
@@ -22,7 +23,7 @@ export class Avatar extends Block<IAvatar> {
           const file = e.target.files[0];
           const formData = new FormData();
           formData.append('avatar', file);
-          UserController.changeAvatar(formData)
+          UserController.changeAvatar(formData).then((data) => { this.avatar = data.avatar; this.render() })
           console.log('0000', file);
           console.log('0000', file.name);
           // let hostResources = 'https://ya-praktikum.tech/api/v2/resources/'
@@ -34,15 +35,18 @@ export class Avatar extends Block<IAvatar> {
     })
 
   }
+
+
   // <img class="profile__avatar_img"  src=${hostResources + photoUrl} >
   //https://ya-praktikum.tech/api/v2/resources/91b2bcc6-a157-412f-9f94-9d643450092c/14408775 - be0f - 43c3 - 8ccc - 74e3a53b315b_1663106478_40 - kartinkin - net - p - irlandskii - lesnoi - kot - oboi - 46.jpg
   render() {
     const hostResources = 'https://ya-praktikum.tech/api/v2/resources/'
-    const photoUrl = this.props.avatar
+    //const pfotoimg = this.avatar
+    console.log(this)
     return `
     <label class="profile__circle" for="file">
     <input class="profile__avatar_previewn" type="file" id="file" >
-     <imgclass="profile__avatar_img" src=${hostResources + photoUrl}>
+     <img width="130px" height="130px" class="profile__avatar_img" src=${hostResources}1751aab2-703f-4c8a-8921-8c736dd2db21/8c2094f8-a118-4280-95ed-060470be2ee4_1663106478_40-kartinkin-net-p-irlandskii-lesnoi-kot-oboi-46.jpg>
     <p class="profile__avatar_text">Поменять аватар</p>
     <svg class="profile__avatar" width="40" height="40" viewBox="0 0 40 40" fill="none"
       xmlns="http://www.w3.org/2000/svg">

@@ -67,7 +67,7 @@ export class ProfilePage extends Block<IProfile> {
     const phone = !this.props.phone ? undefined : `"${this.props.phone}"`;
     const funk = this.changeAvatar
     // const avatar = !this.props.avatar ? '"https://previews.123rf.com/images/denizjdazel/denizjdazel1902/denizjdazel190200045/124841367-.jpg?fj=1"' : `"${this.props.avatar}"`;
-
+    // {{{ Avatar changeAvatar=${funk} }}} - так было (убрал чтобы не выкидывал ошибку)
     // language=hbs
     return `
     <main class='allHtml'>
@@ -78,7 +78,7 @@ export class ProfilePage extends Block<IProfile> {
     </div>
   
     <div class="profile__item">
-    {{{ Avatar changeAvatar=${funk} }}}
+    {{{ Avatar }}}
     
 
   {{{ Title style='profile__title' text_title='Настройка профиля' }}}  

@@ -4,6 +4,7 @@ import { AuthorizationPage } from './pages/authorization/authorization';
 import { registerComponent } from './common/registerComponent';
 import Button from './components/Button';
 import Avatar from './components/Avatar';
+import { Avatar_mini } from './components/Avatar_mini/avatar_mini';
 import Input from './components/Input';
 import InputField from './components/InputField';
 import Chat from './components/Chat';
@@ -30,6 +31,7 @@ registerComponent(InputField, 'InputField');
 registerComponent(InputMas, 'InputMas');
 registerComponent(Text_transition, 'Text_transition');
 registerComponent(Title, 'Title');
+registerComponent(Avatar_mini, 'Avatar_mini');
 registerComponent(Button_chat, 'Button_chat');
 
 registerComponent(Chat, 'Chat');

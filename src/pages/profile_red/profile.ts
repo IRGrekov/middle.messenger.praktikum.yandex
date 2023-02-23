@@ -12,6 +12,7 @@ import Router from '../../common/Router';
 interface IProfileProps_red {
   newPassword: string;
   oldPassword: string;
+  avatar?: string;
 }
 
 interface ProfileAvater {
@@ -53,7 +54,7 @@ export class ProfilePage_red extends Block<IProfile_red> {
   render() {
     const newPassword = !this.props.newPassword ? undefined : `"${this.props.newPassword}"`;
     const oldPassword = !this.props.oldPassword ? undefined : `"${this.props.oldPassword}"`;
-
+    const avatar = !this.props.avatar ? undefined : `"${this.props.avatar}"`;
     // const avatar = !this.props.avatar ? '"https://previews.123rf.com/images/denizjdazel/denizjdazel1902/denizjdazel190200045/124841367-.jpg?fj=1"' : `"${this.props.avatar}"`;
 
     // language=hbs
@@ -66,7 +67,7 @@ export class ProfilePage_red extends Block<IProfile_red> {
     </div>
   
     <div class="profile__item">
-    {{{ Avatar }}}
+    {{{ Avatar avatar=${avatar} }}}
 
   {{{ Title style='profile__title' text_title='Настройка профиля' }}}  
   <div class="profile__form_wrapper">

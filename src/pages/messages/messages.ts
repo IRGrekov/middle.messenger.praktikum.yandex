@@ -13,6 +13,7 @@ import { ws } from '../../index';
 interface IChatListProps {
   chatList?: IChatData[];
   messageList?: IMessageProps[];
+  miniAvatar?: string;
 }
 
 interface IChatList extends IChatListProps {
@@ -166,7 +167,7 @@ export class MessagesPage extends Block<IChatList> {
 
   render() {
     const currentChatTitle = this.getChatTitle();
-
+    const miniAvatar = !this.props.miniAvatar ? undefined : `"${this.props.miniAvatar}"`;
     // language=hbs
     return `
     <main class='allHtml'>
@@ -174,6 +175,7 @@ export class MessagesPage extends Block<IChatList> {
             <div class="block-left">
                 <div class="link-container">
                     <div class="button-chat-container">
+                  
                         {{{ Button buttonId="button-create-chat" style_btn="profile__btn" value="Создать чат" onClick=onCreateChat }}}
                         ${currentChatTitle ? `
                         {{{ Button buttonId="button-add-user" style_btn="profile__btn" value="Пригласить" onClick=onAddUser }}}

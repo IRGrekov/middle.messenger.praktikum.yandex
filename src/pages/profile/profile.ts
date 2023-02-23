@@ -6,7 +6,6 @@ import {
 import Block from '../../common/Block';
 import UserController from '../../controllers/UserController';
 import { IProfileData } from '../../api/UserAPI';
-import { changeAvatarData } from '../../api/UserAPI';
 import AuthController from '../../controllers/AuthController';
 import Router from '../../common/Router';
 
@@ -25,13 +24,16 @@ interface IProfileProps {
 
 interface IProfile extends IProfileProps {
   onClick: Function;
+  onSaveAvatar: Function;
 }
 
 export class ProfilePage extends Block<IProfile> {
   constructor(props: IProfileProps) {
     super({
       ...props,
-      onClick: () => this.onSaveProfile(),
+      ...{
+        onClick: () => this.onSaveProfile(),
+      }
     });
   }
 
@@ -54,9 +56,7 @@ export class ProfilePage extends Block<IProfile> {
         .catch((error) => alert(`Ошибка выполнения запроса обновления профиля! ${error ? error.reason : ''}`));
     }
   }
-  changeAvatar(avatar) {
-    console.log('changeAvatar', avatar)
-  }
+
 
   render() {
     const email = !this.props.email ? undefined : `"${this.props.email}"`;
@@ -65,7 +65,7 @@ export class ProfilePage extends Block<IProfile> {
     const secondName = !this.props.second_name ? undefined : `"${this.props.second_name}"`;
     const displayName = !this.props.display_name ? undefined : `"${this.props.display_name}"`;
     const phone = !this.props.phone ? undefined : `"${this.props.phone}"`;
-    const funk = this.changeAvatar
+    const avatar = !this.props.avatar ? undefined : `"${this.props.avatar}"`;
     // const avatar = !this.props.avatar ? '"https://previews.123rf.com/images/denizjdazel/denizjdazel1902/denizjdazel190200045/124841367-.jpg?fj=1"' : `"${this.props.avatar}"`;
     // {{{ Avatar changeAvatar=${funk} }}} - так было (убрал чтобы не выкидывал ошибку)
     // language=hbs
@@ -78,7 +78,7 @@ export class ProfilePage extends Block<IProfile> {
     </div>
   
     <div class="profile__item">
-    {{{ Avatar }}}
+    {{{ Avatar avatar=${avatar} }}}
     
 
   {{{ Title style='profile__title' text_title='Настройка профиля' }}}  

@@ -9,12 +9,12 @@ interface IInputsValidationResults {
   validationOK: boolean;
 }
 
-/*
- Делает валидацию инпута, устанавливая соответствующие классы,
- при успешной валидации возвращает объект с полями inputName, inputValue и validationOK
- @param elementId - id инпута
- @param regexp - регулярное выражение для проверки значения инпута
- */
+/**
+ * Делает валидацию инпута, устанавливая соответствующие классы,
+ * при успешной валидации возвращает объект с полями inputName, inputValue и validationOK
+ * @param elementId - id инпута
+ * @param regexp - регулярное выражение для проверки значения инпута
+ * */
 export const validateInput = (elementId: string, regexp: RegExp | string): IInputsValidationResults => {
   const input = document.getElementById(elementId) as HTMLInputElement;
   const reg = new RegExp(regexp);
@@ -35,11 +35,11 @@ export const validateInput = (elementId: string, regexp: RegExp | string): IInpu
   };
 };
 
-/*
- Делает валидацию инпутов, устанавливая соответствующие классы,
- при успешной прохождении валидации всех инпутов выводит объект в консоль.
- @param items - параметры IValidateInput
- */
+/**
+ * Делает валидацию инпутов, устанавливая соответствующие классы,
+ * при успешной прохождении валидации всех инпутов выводит объект в консоль.
+ * @param items - параметры IValidateInput
+ * */
 export const validateInputs = (...items: IValidationInput[]) => {
   const inputsValidationResults = items.map((item) => validateInput(item.elementId, item.regexp));
 

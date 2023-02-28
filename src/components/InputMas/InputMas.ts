@@ -4,7 +4,7 @@ import { validateInput } from '../../common/utils';
 
 export type TInputTypeMas = 'email' | 'text' | 'tel' | 'password';
 
-interface IInputPropsMas {
+interface IInputProps {
   inputId: string;
   inputValue?: string;
   inputPlaceholder?: string;
@@ -14,20 +14,13 @@ interface IInputPropsMas {
   regexp: string;
 }
 
-interface IInputMas extends IInputPropsMas {
-  events: {
-    focus: Function;
-    blur: Function;
-  }
-}
-
-export class InputMas extends Block<IInputMas> {
-  constructor(props: IInputPropsMas) {
+export class InputMas extends Block {
+  constructor(props: IInputProps) {
     super({
       ...props,
       events: {
-        focus: () => validateInput(this.props.inputId, this.props.regexp),
-        blur: () => validateInput(this.props.inputId, this.props.regexp),
+        focus: () => validateInput(this.props.inputId as string, this.props.regexp as string),
+        blur: () => validateInput(this.props.inputId as string, this.props.regexp as string),
       },
     });
   }
@@ -35,11 +28,11 @@ export class InputMas extends Block<IInputMas> {
   render() {
     // language=hbs
     return `
-      <input id={{inputId}}
+      <input class ="chat__bottom_input "id={{inputId}}
              ${this.props.inputValue !== undefined && 'value={{inputValue}}'}
              ${this.props.inputPlaceholder !== undefined && 'placeholder={{inputPlaceholder}}'}
              type={{inputType}} name={{inputName}}
-             class="chat__bottom_input "
+             class="form-input"
              autocomplete="false"/>
     `;
   }

@@ -5,7 +5,7 @@ import '../../common/styles/styles.less';
 export type TInputTypeProfile = 'email' | 'text' | 'tel' | 'password';
 
 interface IInputFieldProfile {
-  label?: string;
+  labelText?: string;
   inputId: string;
   inputType: TInputTypeProfile;
   inputName: string;
@@ -16,7 +16,7 @@ interface IInputFieldProfile {
 
 }
 
-export class InputFieldProfile extends Block<IInputFieldProfile> {
+export class InputFieldProfile extends Block {
   constructor(props: IInputFieldProfile) {
     super({
       ...props,
@@ -25,7 +25,7 @@ export class InputFieldProfile extends Block<IInputFieldProfile> {
 
   render() {
     const {
-      label, inputId, inputType, inputName, inputValue, inputPlaceholder, regexp, classInput,
+      inputId, inputType, inputName, inputValue, inputPlaceholder, regexp, classInput,
     } = this.props;
 
     // language=hbs

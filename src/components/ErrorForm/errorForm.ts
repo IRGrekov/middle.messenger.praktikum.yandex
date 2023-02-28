@@ -6,7 +6,7 @@ interface IButtonProps {
   text_error: string;
 }
 
-export class ErrorForm extends Block<IButtonProps> {
+export class ErrorForm extends Block {
   constructor(xx: IButtonProps) {
     console.log("xx", xx);
     super(xx)

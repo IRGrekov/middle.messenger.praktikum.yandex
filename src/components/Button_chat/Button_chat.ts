@@ -9,13 +9,8 @@ interface IButton_chatProps {
   onClick: () => void;
 }
 
-type TButton_chat = Omit<IButton_chatProps, 'onClick'> & {
-  events: {
-    click: Function,
-  },
-};
 
-export class Button_chat extends Block<TButton_chat> {
+export class Button_chat extends Block {
   constructor({ value, buttonId, style_btn, onClick }: IButton_chatProps) {
     super({
       value,

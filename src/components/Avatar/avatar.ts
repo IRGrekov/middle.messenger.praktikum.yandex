@@ -9,13 +9,8 @@ interface IAvatarProps {
   avatar: string;
 }
 
-interface IAvatar extends IAvatarProps {
-  avatar: string;
-  events: {
-    change: Function;
-  };
-}
-export class Avatar extends Block<IAvatar> {
+
+export class Avatar extends Block {
   constructor(props: IAvatarProps) {
     super({
       ...props,

@@ -9,13 +9,7 @@ interface IButtonProps {
   onClick: () => void;
 }
 
-type TButton = Omit<IButtonProps, 'onClick'> & {
-  events: {
-    click: Function,
-  },
-};
-
-export class Button extends Block<TButton> {
+export class Button extends Block {
   constructor({ value, buttonId, style_btn, onClick }: IButtonProps) {
     super({
       value,
@@ -30,8 +24,8 @@ export class Button extends Block<TButton> {
   render() {
     // language=hbs
     return `
-      <button id={{buttonId}} class='{{style_btn}}' type="button"> {{value}} 
-      </button>
+    <button id={{buttonId}} class='{{style_btn}}' type="button"> {{value}} 
+    </button>
     `;
   }
 }

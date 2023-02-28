@@ -7,7 +7,7 @@ import { SignInData } from '../../api/AuthAPI';
 import Router from '../../common/Router';
 import ChatController from '../../controllers/ChatController';
 
-export class AuthorizationPage extends Block<{ onClick: Function }> {
+export class AuthorizationPage extends Block {
   constructor() {
     super({
       onClick: () => this.onSignIn(),
@@ -27,17 +27,16 @@ export class AuthorizationPage extends Block<{ onClick: Function }> {
     if (data) {
       AuthController.signIn(data as SignInData)
         .then(() => {
-          console.log('Авторизация выполнена успешно!');
+          // eslint-disable-next-line no-console
+          console.log('Авторизация выполнена успешно >>>');
           ChatController.getChats();
           const router = new Router();
           router.go('/messages');
         })
+        // eslint-disable-next-line no-alert
         .catch((error) => alert(`Ошибка выполнения запроса авторизации! ${error ? error.reason : ''}`));
     }
   }
-
-
-
 
   render() {
     // language=hbs
@@ -56,13 +55,12 @@ export class AuthorizationPage extends Block<{ onClick: Function }> {
 
     <div class="login__item">
     {{{ Button buttonId="button-auth" style_btn="login__btn" tyle_btn="login__btn" value="Войти" onClick=onClick }}}
-    {{{ Text_transition  style_text="login__text" text='Регистрация' href="/signup" }}}
+    {{{ Link  style_text="login__text" text='Регистрация'  href="/sign-up" }}}
     </div>
     </form>
   </div>
 
 </div>
-
     `;
   }
 }

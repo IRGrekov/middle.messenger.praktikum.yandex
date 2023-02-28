@@ -8,14 +8,10 @@ interface IButton_back {
   onClick: () => void;
 }
 
-type TButton = Omit<IButton_back, 'onClick'> & {
-  events: {
-    click: Function,
-  },
-};
 
-export class Button_back extends Block<TButton_back> {
-  constructor({ onClick }: IButton_back) {
+
+export class Button_back extends Block {
+  constructor({ }: IButton_back) {
     super({
       events: {
         click: () => window.location.href = "/messages",

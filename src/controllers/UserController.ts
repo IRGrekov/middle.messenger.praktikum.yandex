@@ -1,4 +1,5 @@
-import UserAPI, { IProfileData, changePasswordData } from '../api/UserAPI';
+import { changePasswordData } from '../api/AuthAPI';
+import UserAPI, { IProfileData } from '../api/UserAPI';
 import { store } from '../common/Store';
 
 class UserController {
@@ -13,7 +14,7 @@ class UserController {
   }
 
   async changePassword(data: changePasswordData) {
-    //console.log("222")
+    console.log("222")
     await this.api.changePassword(data);
   }
 
@@ -25,4 +26,3 @@ class UserController {
 }
 
 export default new UserController();
-

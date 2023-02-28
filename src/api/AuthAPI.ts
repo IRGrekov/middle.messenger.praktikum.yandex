@@ -27,7 +27,7 @@ export interface changePasswordData {
 export default class AuthAPI {
   protected http: HTTPTransport;
 
-  protected constructor() {
+  constructor() {
     this.http = new HTTPTransport('/auth');
   }
 
@@ -38,7 +38,6 @@ export default class AuthAPI {
   signIn(data: SignInData): Promise<string> {
     return this.http.post('/signin', data);
   }
-
 
   logout(): Promise<string> {
     return this.http.post('/logout');

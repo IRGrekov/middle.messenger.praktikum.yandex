@@ -18,7 +18,7 @@ interface IInputField {
 
 }
 
-export class InputField extends Block<IInputField> {
+export class InputField extends Block {
   constructor(props: IInputField) {
     super({
       ...props,
@@ -27,31 +27,28 @@ export class InputField extends Block<IInputField> {
 
   render() {
     const {
-      labelText, inputId, inputType, inputName, inputValue, inputPlaceholder, regexp, classInput,
+      classInput, inputId, inputType, inputName, inputValue, inputPlaceholder, regexp,
     } = this.props;
 
     // language=hbs
     return `
-        <div class="login__form">
-            <label for={{inputName}} class="login__subtext">{{labelText}}</label> 
-           
-            {{{ Input inputId="${inputId}"
-                      inputType="${inputType}"
-                      inputName="${inputName}"
-                      ${inputValue !== undefined ? `inputValue="${inputValue}"` : ''}
-                      ${inputPlaceholder !== undefined ? `inputPlaceholder="${inputPlaceholder}"` : ''}
-                      regexp="${regexp}"
-                      class="${classInput}"
-                      
-            }}}
-            <div class="errorInput">
-           {{errorText}}
-            </div>
+    <div class="login__form">
+    <label for={{inputName}} class="login__subtext">{{labelText}}</label> 
+   
+    {{{ Input inputId="${inputId}"
+              inputType="${inputType}"
+              inputName="${inputName}"
+              ${inputValue !== undefined ? `inputValue="${inputValue}"` : ''}
+              ${inputPlaceholder !== undefined ? `inputPlaceholder="${inputPlaceholder}"` : ''}
+              regexp="${regexp}"
+              class="${classInput}"
+              
+    }}}
+    <div class="errorInput">
+   {{errorText}}
+    </div>
 
-        </div>  
-
-
+</div>   
     `;
   }
 }
-

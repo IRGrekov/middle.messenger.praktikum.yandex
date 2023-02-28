@@ -8,13 +8,9 @@ interface IText_transition {
   href?: string;
 }
 
-type TText_transition = Omit<IText_transition, 'onClick'> & {
-  events: {
-    click: Function,
-  },
-};
 
-export class Text_transition extends Block<TText_transition> {
+
+export class Text_transition extends Block {
   constructor({ text, style_text, href }: IText_transition
   ) {
     super({

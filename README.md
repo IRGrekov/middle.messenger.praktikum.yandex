@@ -7,6 +7,7 @@
 * Возможность создания / удаления чата
 * ВОЗМОЖНОСТЬ ОБМЕНА СООБЩЕНИЯМИ В РЕАЛЬНОМ ВРЕМЕНИ!
 
+### Netlify: https://fantastic-shortbread-f1d835.netlify.app/messages
 
 ###  Дизайн-макета  [шаблоны от Яндекс](https://www.figma.com/file/24EUnEHGEDNLdOcxg7ULwV/Chat?node-id=0%3A1 "Ссылка на макеты Figma") 
 ### Используемые технологии:

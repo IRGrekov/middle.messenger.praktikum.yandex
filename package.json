@@ -17,14 +17,6 @@
     "websocket",
     "handlebars"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm-run-all test lint:all",
-      "pre-push": "npm run other command",
-      "...": "..."
-    }
-  }
-  
   "devDependencies": {
     "@anikin/parcel-transformer-handlebars": "^1.0.2",
     "@anikin/parcel-transformer-handlebars-precompile": "1.0.1",

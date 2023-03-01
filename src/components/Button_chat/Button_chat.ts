@@ -9,9 +9,10 @@ interface IButton_chatProps {
   onClick: () => void;
 }
 
-
 export class Button_chat extends Block {
-  constructor({ value, buttonId, style_btn, onClick }: IButton_chatProps) {
+  constructor({
+    value, buttonId, style_btn, onClick,
+  }: IButton_chatProps) {
     super({
       value,
       buttonId,

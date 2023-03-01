@@ -8,8 +8,8 @@ interface IButtonProps {
 
 export class ErrorForm extends Block {
   constructor(xx: IButtonProps) {
-    console.log("xx", xx);
-    super(xx)
+    console.log('xx', xx);
+    super(xx);
   }
   // constructor({ errorNumber, text_error }: IButtonProps) {
   //   super({
@@ -42,4 +42,3 @@ v34.8h-27.9v145.1h145.1v-27.9h34.8v27.9h27.9V362.4z" />
   `;
   }
 }
-

@@ -7,7 +7,6 @@ class Router {
 
   private history: any = window.history;
 
-
   private static __instance: Router;
 
   constructor() {

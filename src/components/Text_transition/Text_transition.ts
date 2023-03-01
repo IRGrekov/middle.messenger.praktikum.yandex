@@ -8,11 +8,8 @@ interface IText_transition {
   href?: string;
 }
 
-
-
 export class Text_transition extends Block {
-  constructor({ text, style_text, href }: IText_transition
-  ) {
+  constructor({ text, style_text, href }: IText_transition) {
     super({
       text,
       style_text,

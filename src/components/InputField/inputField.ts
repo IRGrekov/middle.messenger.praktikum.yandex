@@ -15,7 +15,6 @@ interface IInputField {
   classInput?: string;
   errorText: string;
 
-
 }
 
 export class InputField extends Block {

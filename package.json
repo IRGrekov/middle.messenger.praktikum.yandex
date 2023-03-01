@@ -17,6 +17,14 @@
     "websocket",
     "handlebars"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm-run-all test lint:all",
+      "pre-push": "npm run other command",
+      "...": "..."
+    }
+  }
+  
   "devDependencies": {
     "@anikin/parcel-transformer-handlebars": "^1.0.2",
     "@anikin/parcel-transformer-handlebars-precompile": "1.0.1",
@@ -44,7 +52,7 @@
     "eslint-plugin-import": "^2.25.4",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
-    "husky": "7.0.4",
+    "husky": "^7.0.4",
     "jsdom": "19.0.0",
     "less": "4.1.2",
     "less-loader": "10.2.0",

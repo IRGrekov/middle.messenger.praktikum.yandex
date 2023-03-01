@@ -10,7 +10,9 @@ interface IButtonProps {
 }
 
 export class Button extends Block {
-  constructor({ value, buttonId, style_btn, onClick }: IButtonProps) {
+  constructor({
+    value, buttonId, style_btn, onClick,
+  }: IButtonProps) {
     super({
       value,
       buttonId,

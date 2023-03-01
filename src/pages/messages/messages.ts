@@ -20,8 +20,8 @@ export class MessagesPage extends Block {
     super({
       ...props,
       onClick: (event: Event) => {
-        console.log("event.target", event.target)
-        if (((event.target as any).closest("button") as HTMLButtonElement).id === 'button-send-message') {
+        console.log('event.target', event.target);
+        if (((event.target as any).closest('button') as HTMLButtonElement).id === 'button-send-message') {
           this.onSendMessage();
         } else {
           this.onLogout();
@@ -34,7 +34,6 @@ export class MessagesPage extends Block {
       getProfileInfo: () => this.getProfileInfo(),
     });
   }
-
 
   componentDidMount() {
     const router = new Router();

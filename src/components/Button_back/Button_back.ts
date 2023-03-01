@@ -2,26 +2,20 @@
 import Block from '../../common/Block';
 import '../../common/styles/styles.less';
 
-
-
 interface IButton_back {
   onClick: () => void;
 }
-
-
 
 export class Button_back extends Block {
   constructor({ }: IButton_back) {
     super({
       events: {
-        click: () => window.location.href = "/messages",
-      }
+        click: () => window.location.href = '/messages',
+      },
 
       //   blur: () => validateInput(this.props.inputId, this.props.regexp),
 
-
-    },
-    )
+    });
   }
 
   render() {

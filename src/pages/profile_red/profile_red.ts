@@ -13,7 +13,6 @@ interface IProfileProps_red {
   avatar?: string;
 }
 
-
 export class ProfilePage_red extends Block {
   constructor(props: IProfileProps_red) {
     super({
@@ -31,17 +30,15 @@ export class ProfilePage_red extends Block {
       { elementId: 'newPassword', regexp: REGEXP_PASSWORD },
       { elementId: 'oldPassword', regexp: REGEXP_PASSWORD },
     );
-    console.log("3")
-    console.log(data)
+    console.log('3');
+    console.log(data);
     if (data) {
-      console.log(data)
+      console.log(data);
       UserController.changePassword(data as changePasswordData)
         .then(() => alert('Профиль успешно обновлен!'))
         .catch((error) => alert(`Ошибка выполнения запроса авторизации! ${error ? error.reason : ''}`));
     }
   }
-
-
 
   render() {
     const newPassword = !this.props.newPassword ? undefined : `"${this.props.newPassword}"`;

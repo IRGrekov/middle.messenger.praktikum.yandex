@@ -7,11 +7,8 @@ interface ITitle {
   style: string;
 }
 
-
-
 export class Title extends Block {
-  constructor({ text_title, style }: ITitle
-  ) {
+  constructor({ text_title, style }: ITitle) {
     super({
       text_title,
       style,

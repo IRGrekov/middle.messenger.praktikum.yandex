@@ -14,7 +14,7 @@ class UserController {
   }
 
   async changePassword(data: changePasswordData) {
-    console.log("222")
+    console.log('222');
     await this.api.changePassword(data);
   }
 
@@ -22,7 +22,6 @@ class UserController {
     const userData = await this.api.changeAvatarData(data);
     store.set('currentUser', userData);
   }
-
 }
 
 export default new UserController();

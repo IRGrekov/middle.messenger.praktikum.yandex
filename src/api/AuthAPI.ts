@@ -39,7 +39,6 @@ export default class AuthAPI {
     return this.http.post('/signin', data);
   }
 
-
   logout(): Promise<string> {
     return this.http.post('/logout');
   }

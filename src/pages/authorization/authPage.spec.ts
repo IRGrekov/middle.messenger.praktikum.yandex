@@ -18,7 +18,6 @@ describe('Тест компонента AuthorizationPage', () => {
     chai.expect(authPage.getContent()).to.have.class('login');
   });
 
-
   it('Компонент содержит элемент form с классом authorisation-form__form', () => {
     chai.expect(authPage.getContent()?.querySelector('form')).to.have.class('authorisation-form__form');
   });
@@ -30,5 +29,4 @@ describe('Тест компонента AuthorizationPage', () => {
   it('На форме имеется 2 элемента label c текстами "Логин:" и "Пароль:"', () => {
     chai.expect(authPage.getContent()?.querySelectorAll('label')).to.have.text(['Логин:', 'Пароль:']);
   });
-
 });

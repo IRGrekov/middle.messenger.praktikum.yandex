@@ -25,8 +25,6 @@ class AuthController {
 
     store.set('currentUser', userData);
   }
-
-
 }
 
 export default new AuthController();

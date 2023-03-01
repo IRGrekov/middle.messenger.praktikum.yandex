@@ -41,7 +41,7 @@ export class RegistrationPage extends Block {
     <div class="login__wrapper">
       <div class="login__item">
                 {{{ Title style='login__title' text_title='Регистрация' }}}
-                <form id="createLogin">
+                <form class="registration-form__form" id="createLogin">
                     <div class="input-block">
                   
                     {{{ InputField classInput="login__input" errorText="латиница обязательно должна быть (@)" labelText="Почта:" inputId="email-reg" inputType="email" inputName="email" regexp="${REGEXP_EMAIL}" }}}

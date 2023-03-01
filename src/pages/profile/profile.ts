@@ -62,7 +62,7 @@ export class ProfilePage extends Block {
     // language=hbs
     return `
 
-    <main class='allHtml'>
+    <main class='allHtml_profile'>
 
     <div class="profile">
     <div class="profile__item">

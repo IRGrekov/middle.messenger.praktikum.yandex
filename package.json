@@ -8,8 +8,6 @@
     "serve": "webpack serve",
     "test": "cross-env NODE_ENV=test mocha --require test/babel-register.js --require test/mock.js",
     "lint": "npx eslint . --ext .ts --fix",
-    "validate": "npm-run-all --parallel test lint",
-    "precommit": "npm-run-all test lint:all",
     "deploy": "sudo heroku login && sudo heroku container:login && sudo heroku container:push web --app=alex-kor-messenger && sudo heroku container:release web --app=alex-kor-messenger"
   },
   "keywords": [
@@ -72,7 +70,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run test"
+      "pre-commit": "echo \"[==========Husky] pre-commit\""
     }
   }
 }

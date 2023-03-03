@@ -37,7 +37,7 @@ export class AuthorizationPage extends Block {
         .catch((error) => alert(`Ошибка выполнения запроса авторизации! ${error ? error.reason : ''}`));
     }
   }
-  let arrasd
+  let arrasdsa
 
 
 render() {

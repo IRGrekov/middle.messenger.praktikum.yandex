@@ -39,6 +39,7 @@ export class AuthorizationPage extends Block {
   }
   let arr
 acs
+asd
 
 render() {
   // language=hbs

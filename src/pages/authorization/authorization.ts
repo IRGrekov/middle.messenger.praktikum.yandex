@@ -37,10 +37,11 @@ export class AuthorizationPage extends Block {
         .catch((error) => alert(`Ошибка выполнения запроса авторизации! ${error ? error.reason : ''}`));
     }
   }
+  let arr
 
-  render() {
-    // language=hbs
-    return `
+render() {
+  // language=hbs
+  return `
 
     <main class="login">
     <div class="login__wrapper">
@@ -62,5 +63,5 @@ export class AuthorizationPage extends Block {
 
 </div>
     `;
-  }
+}
 }

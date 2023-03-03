@@ -37,5 +37,3 @@ npm run build
 ```
 npm run test
 ```
-
-nn

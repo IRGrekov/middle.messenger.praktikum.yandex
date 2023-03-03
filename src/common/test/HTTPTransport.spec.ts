@@ -1,10 +1,10 @@
 import { expect } from 'chai';
-import sinon, { SinonFakeXMLHttpRequest, SinonFakeXMLHttpRequestStatic } from 'sinon';
+import sinon, { } from 'sinon';
 import HTTPTransport from '../HTTPTransport';
 
 const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
-// const dom = new JSDOM(`<!DOCTYPE html><p>Hello world</p>`);
+const dom = new JSDOM(`<!DOCTYPE html><p>Hello world</p>`);
 
 let open: any, send: any, setRequestHeader: any;
 
@@ -16,7 +16,7 @@ describe("HTTPTransport test", () => {
   });
 
   function FakeFormData() { }
-
+  dom
   // @ts-ignore
   global.FormData = FakeFormData;
   // @ts-ignore

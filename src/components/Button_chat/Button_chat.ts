@@ -2,17 +2,17 @@
 import Block from '../../common/Block';
 import '../../common/styles/styles.less';
 
-interface IButton_chatProps {
+interface IButtonChatProps {
   value: string;
   buttonId: string;
   style_btn: string;
   onClick: () => void;
 }
 
-export class Button_chat extends Block {
+export class ButtonChat extends Block {
   constructor({
     value, buttonId, style_btn, onClick,
-  }: IButton_chatProps) {
+  }: IButtonChatProps) {
     super({
       value,
       buttonId,

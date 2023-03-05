@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import Block from '../../common/Block';
 import './messages.less';
 import { scrollToLastMessage, validateInputs } from '../../common/utils';
@@ -197,7 +198,6 @@ export class MessagesPage extends Block {
                 </div>
                 {{{ Link style_text="login__text" text='Профиль'  href="/settings" }}}
             </div>
-
             <div class="search">
             <button class="search__btn">
               <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -212,7 +212,6 @@ export class MessagesPage extends Block {
                 ${this.chatListToJSX()}
             </div>
         </div>
-
         <div class="block-right">
             <div class="profile-info">
                 <div class="profile-logo">
@@ -229,16 +228,14 @@ export class MessagesPage extends Block {
                     {{{ Button buttonId="button-logout"  style_btn="profile__btn" value="Выход" onClick=onClick }}}
                 </div>
             </div>
-
             <div class="messages-container">
                 ${this.messageListToJSX()}
             </div>
             
             <form class="send-message-block" onSubmit="return false;">
-
             {{{ InputMas class="chat__bottom_input"  inputId="message" inputPlaceholder="Сообщение" inputType="text" inputName="message" regexp="^.*\\S.*$" }}}
                 <div class="button-container">
-                    ${currentChatTitle ? '{{{ Button_chat buttonId="button-send-message" label="Отправить"   onClick=onClick }}}' : ''}
+                    ${currentChatTitle ? '{{{ ButtonChat buttonId="button-send-message" label="Отправить"   onClick=onClick }}}' : ''}
                 </div>
             </form>
         </div>

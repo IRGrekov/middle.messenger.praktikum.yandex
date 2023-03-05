@@ -1,1 +1,1 @@
-export { Button_chat as default } from './Button_chat';
+export { ButtonChat as default } from './Button_chat';

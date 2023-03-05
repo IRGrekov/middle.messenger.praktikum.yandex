@@ -1,20 +1,21 @@
+/* eslint-disable max-len */
 import './profile.less';
 import { validateInputs } from '../../common/utils';
 import { REGEXP_PASSWORD } from '../../common/const';
 import Block from '../../common/Block';
 import UserController from '../../controllers/UserController';
-import { changePasswordData } from '../../api/AuthAPI';
+import { ChangePasswordData } from '../../api/AuthAPI';
 import AuthController from '../../controllers/AuthController';
 import Router from '../../common/Router';
 
-interface IProfileProps_red {
+interface IProfilePropsRed {
   newPassword: string;
   oldPassword: string;
   avatar?: string;
 }
 
-export class ProfilePage_red extends Block {
-  constructor(props: IProfileProps_red) {
+export class ProfilePageRed extends Block {
+  constructor(props: IProfilePropsRed) {
     super({
       ...props,
       onClick: () => this.onSaveProfile(),
@@ -34,7 +35,7 @@ export class ProfilePage_red extends Block {
     console.log(data);
     if (data) {
       console.log(data);
-      UserController.changePassword(data as changePasswordData)
+      UserController.changePassword(data as ChangePasswordData)
         .then(() => alert('Профиль успешно обновлен!'))
         .catch((error) => alert(`Ошибка выполнения запроса авторизации! ${error ? error.reason : ''}`));
     }
@@ -52,7 +53,7 @@ export class ProfilePage_red extends Block {
 
     <div class="profile">
     <div class="profile__item">
-  {{{ Button_back }}}
+  {{{ ButtonBack }}}
     </div>
   
     <div class="profile__item">

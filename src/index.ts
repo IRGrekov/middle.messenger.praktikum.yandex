@@ -9,13 +9,12 @@ import InputField from './components/InputField';
 import Chat from './components/Chat';
 import Message from './components/Message';
 import ProfilePage from './pages/profile';
-import { Button_chat } from './components/Button_chat/Button_chat';
+import { ButtonChat } from './components/Button_chat/Button_chat';
 import { InputMas } from './components/InputMas/InputMas';
 import { ErrorForm } from './components/ErrorForm/errorForm';
-import { ProfilePage_red } from './pages/profile_red/profile_red';
+import { ProfilePageRed } from './pages/profile_red/profile_red';
 import { Title } from './components/Title/title';
-import { Button_back } from './components/Button_back/Button_back';
-import { Text_transition } from './components/Text_transition/Text_transition';
+import { TextTransition } from './components/Text_transition/Text_transition';
 import Link from './components/Link';
 // eslint-disable-next-line import/no-cycle
 import MessagesPage from './pages/messages';
@@ -26,14 +25,12 @@ registerComponent(Button, 'Button');
 registerComponent(InputFieldProfile, 'InputFieldProfile');
 registerComponent(Avatar, 'Avatar');
 registerComponent(Link, 'Link');
-
-registerComponent(Button_back, 'Button_back');
 registerComponent(Input, 'Input');
 registerComponent(InputField, 'InputField');
 registerComponent(InputMas, 'InputMas');
 registerComponent(Title, 'Title');
-registerComponent(Text_transition, 'Text_transition');
-registerComponent(Button_chat, 'Button_chat');
+registerComponent(TextTransition, 'TextTransition');
+registerComponent(ButtonChat, 'ButtonChat');
 
 registerComponent(Chat, 'Chat');
 registerComponent(Message, 'Message');
@@ -44,7 +41,7 @@ export const ws = new WS();
 router.use('/', AuthorizationPage)
   .use('/sign-up', RegistrationPage)
   .use('/settings', ProfilePage)
-  .use('/settings_red', ProfilePage_red)
+  .use('/settings_red', ProfilePageRed)
   .use('/messages', MessagesPage)
   .use('/error404', ErrorForm)
   .use('/error500', ErrorForm)

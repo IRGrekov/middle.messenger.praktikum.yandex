@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import Block from '../../common/Block';
 import './authorization.less';
 import { validateInputs } from '../../common/utils';
@@ -37,8 +38,6 @@ export class AuthorizationPage extends Block {
         .catch((error) => alert(`Ошибка выполнения запроса авторизации! ${error ? error.reason : ''}`));
     }
   }
-
-
 
   render() {
     // language=hbs

@@ -66,7 +66,7 @@ export class ProfilePage extends Block {
 
     <div class="profile">
     <div class="profile__item">
-  {{{ Button_back }}}
+  {{{ ButtonBack }}}
     </div>
   
     <div class="profile__item">

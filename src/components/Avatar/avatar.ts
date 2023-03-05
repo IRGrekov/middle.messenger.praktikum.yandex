@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 // import template from './button.hbs';
 import Block from '../../common/Block';
 import '../../common/styles/styles.less';
@@ -28,7 +29,6 @@ export class Avatar extends Block {
   }
 
   // <img class="profile__avatar_img"  src=${hostResources + photoUrl} >
-  // https://ya-praktikum.tech/api/v2/resources/91b2bcc6-a157-412f-9f94-9d643450092c/14408775 - be0f - 43c3 - 8ccc - 74e3a53b315b_1663106478_40 - kartinkin - net - p - irlandskii - lesnoi - kot - oboi - 46.jpg
   render() {
     const hostResources = 'https://ya-praktikum.tech/api/v2/resources/';
     const {

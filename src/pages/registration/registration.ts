@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import Block from '../../common/Block';
 import './registration.less';
 import { validateInputs } from '../../common/utils';

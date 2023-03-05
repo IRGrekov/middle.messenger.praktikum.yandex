@@ -10,14 +10,7 @@
     "lint": "npx eslint . --ext .ts ",
     "lint-style": "npx stylelint \"**/*.less\" --fix",
     "fix": "npx eslint . --ext .ts --fix",
-    "deploy": "sudo heroku login && sudo heroku container:login && sudo heroku container:push web --app=alex-kor-messenger && sudo heroku container:release web --app=alex-kor-messenger",
-    "precommit": "npm-run-all test",
-    "prepare": "husky install"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "deploy": "sudo heroku login && sudo heroku container:login && sudo heroku container:push web --app=alex-kor-messenger && sudo heroku container:release web --app=alex-kor-messenger"
   },
   "lint-staged": {
     "*.{ts}": [
@@ -27,6 +20,11 @@
     "*.{less, css}": [
       "npm run lint-style"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "keywords": [
     "messenger",

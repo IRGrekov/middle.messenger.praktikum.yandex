@@ -9,12 +9,12 @@ import InputField from './components/InputField';
 import Chat from './components/Chat';
 import Message from './components/Message';
 import ProfilePage from './pages/profile';
-import { ButtonChat } from './components/Button_chat/Button_chat';
+import { ButtonChat } from './components/ButtonChat/ButtonChat';
 import { InputMas } from './components/InputMas/InputMas';
 import { ErrorForm } from './components/ErrorForm/errorForm';
 import { ProfilePageRed } from './pages/profile_red/profile_red';
 import { Title } from './components/Title/title';
-import { TextTransition } from './components/Text_transition/Text_transition';
+import { TextTransition } from './components/TextTransition/TextTransition';
 import Link from './components/Link';
 // eslint-disable-next-line import/no-cycle
 import MessagesPage from './pages/messages';

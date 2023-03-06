@@ -1,21 +1,14 @@
+/* eslint-disable max-len */
 // import template from './button.hbs';
 import Block from '../../common/Block';
 import '../../common/styles/styles.less';
 import UserController from '../../controllers/UserController';
 
-
-
 interface IAvatarProps {
   avatar: string;
 }
 
-interface IAvatar extends IAvatarProps {
-  avatar: string;
-  events: {
-    change: Function;
-  };
-}
-export class Avatar extends Block<IAvatar> {
+export class Avatar extends Block {
   constructor(props: IAvatarProps) {
     super({
       ...props,
@@ -29,19 +22,17 @@ export class Avatar extends Block<IAvatar> {
           console.log('0000', file.name);
           // let hostResources = 'https://ya-praktikum.tech/api/v2/resources/'
           // let photoUrl = file.name
-        }
+        },
 
       },
-    })
+    });
   }
 
-
   // <img class="profile__avatar_img"  src=${hostResources + photoUrl} >
-  //https://ya-praktikum.tech/api/v2/resources/91b2bcc6-a157-412f-9f94-9d643450092c/14408775 - be0f - 43c3 - 8ccc - 74e3a53b315b_1663106478_40 - kartinkin - net - p - irlandskii - lesnoi - kot - oboi - 46.jpg
   render() {
-    const hostResources = 'https://ya-praktikum.tech/api/v2/resources/'
+    const hostResources = 'https://ya-praktikum.tech/api/v2/resources/';
     const {
-      avatar
+      avatar,
     } = this.props;
     const avatarURL = `${hostResources}${avatar}`;
 
@@ -61,5 +52,3 @@ export class Avatar extends Block<IAvatar> {
     `;
   }
 }
-
-

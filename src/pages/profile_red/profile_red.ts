@@ -1,29 +1,21 @@
+/* eslint-disable max-len */
 import './profile.less';
 import { validateInputs } from '../../common/utils';
 import { REGEXP_PASSWORD } from '../../common/const';
 import Block from '../../common/Block';
 import UserController from '../../controllers/UserController';
-import { IProfileData, } from '../../api/UserAPI';
-import { changeAvatarData } from '../../api/UserAPI';
-import { changePasswordData } from '../../api/AuthAPI';
+import { ChangePasswordData } from '../../api/AuthAPI';
 import AuthController from '../../controllers/AuthController';
 import Router from '../../common/Router';
 
-interface IProfileProps_red {
+interface IProfilePropsRed {
   newPassword: string;
   oldPassword: string;
   avatar?: string;
 }
 
-interface ProfileAvater {
-  avatar: string;
-}
-interface IProfile_red extends IProfileProps_red {
-  onClick: Function;
-}
-
-export class ProfilePage_red extends Block<IProfile_red> {
-  constructor(props: IProfileProps_red) {
+export class ProfilePageRed extends Block {
+  constructor(props: IProfilePropsRed) {
     super({
       ...props,
       onClick: () => this.onSaveProfile(),
@@ -31,7 +23,7 @@ export class ProfilePage_red extends Block<IProfile_red> {
   }
 
   componentDidMount() {
-    AuthController.fetchUser().catch(() => new Router().go('/signin'));
+    AuthController.fetchUser().catch(() => new Router().go('/'));
   }
 
   onSaveProfile() {
@@ -39,22 +31,20 @@ export class ProfilePage_red extends Block<IProfile_red> {
       { elementId: 'newPassword', regexp: REGEXP_PASSWORD },
       { elementId: 'oldPassword', regexp: REGEXP_PASSWORD },
     );
-    console.log("3")
-    console.log(data)
+    console.log('3');
+    console.log(data);
     if (data) {
-      console.log(data)
-      UserController.changePassword(data as changePasswordData)
+      console.log(data);
+      UserController.changePassword(data as ChangePasswordData)
         .then(() => alert('Профиль успешно обновлен!'))
         .catch((error) => alert(`Ошибка выполнения запроса авторизации! ${error ? error.reason : ''}`));
     }
   }
 
-
-
   render() {
     const newPassword = !this.props.newPassword ? undefined : `"${this.props.newPassword}"`;
     const oldPassword = !this.props.oldPassword ? undefined : `"${this.props.oldPassword}"`;
-    const avatar = !this.props.avatar ? undefined : `"${this.props.avatar}"`;
+
     // const avatar = !this.props.avatar ? '"https://previews.123rf.com/images/denizjdazel/denizjdazel1902/denizjdazel190200045/124841367-.jpg?fj=1"' : `"${this.props.avatar}"`;
 
     // language=hbs
@@ -63,36 +53,35 @@ export class ProfilePage_red extends Block<IProfile_red> {
 
     <div class="profile">
     <div class="profile__item">
-  {{{ Button_back }}}
+  {{{ ButtonBack }}}
     </div>
   
     <div class="profile__item">
-    {{{ Avatar avatar=${avatar} }}}
 
   {{{ Title style='profile__title' text_title='Настройка профиля' }}}  
   <div class="profile__form_wrapper">
   <form class="profile-form__form">
 
-  {{{ InputFieldProfile classInput="profile__input"  labelText="Пароль:"  errorText="Должно содержать от 8 до 40 символов + Заглавный символ" inputId="oldPassword" inputType="password" inputName="oldPassword" regexp="${REGEXP_PASSWORD}" }}}
-  {{{ InputFieldProfile classInput="profile__input"  labelText="Новый Пароль:"  errorText="Должно содержать от 8 до 40 символов + Заглавный символ" inputId="newPassword" inputType="password_new" inputName="newPassword" regexp="${REGEXP_PASSWORD}" }}}
+  {{{ InputFieldProfile classInput="profile__input"  inputValue=${oldPassword} labelText="Текущий пароль:"  errorText="Должно содержать от 8 до 40 символов + Заглавный символ" inputId="oldPassword" inputType="password" inputName="oldPassword"
+  regexp="${REGEXP_PASSWORD}" }}}
 
+  {{{ InputFieldProfile classInput="profile__input"  inputValue=${newPassword} labelText="Новый пароль:"errorText="Должно содержать от 8 до 40 символов + Заглавный символ" inputId="newPassword" inputType="password_new" inputName="newPassword"
+
+  regexp="${REGEXP_PASSWORD}" }}}
 
 <div class="profile__transition">
 <div class="button-block">
 {{{ Button  style_btn="profile__btn"  buttonId="button-save-profile" value="Сохранить" onClick=onClick }}}
-
 </div>
 <nav class="nav-block">
-{{{ Text_transition  style_text="profile__text" text='На главную' href="/messages" }}}
-{{{ Text_transition  style_text="profile__text" text='Настройка профиля' href="/profile" }}}
+{{{ Link  style_text="profile__text" text='На главную' href="/messages" }}}
+{{{ Link  style_text="profile__text" text='Настройка профиля' href="/settings" }}}
 </nav>
           </form>
         </div>
       </div>
       </main>
 
-
-        
     `;
   }
 }

@@ -20,25 +20,16 @@ interface IProfileProps {
   avatar?: string;
 }
 
-
-
-interface IProfile extends IProfileProps {
-  onClick: Function;
-  onSaveAvatar: Function;
-}
-
-export class ProfilePage extends Block<IProfile> {
+export class ProfilePage extends Block {
   constructor(props: IProfileProps) {
     super({
       ...props,
-      ...{
-        onClick: () => this.onSaveProfile(),
-      }
+      onClick: () => this.onSaveProfile(),
     });
   }
 
   componentDidMount() {
-    AuthController.fetchUser().catch(() => new Router().go('/signin'));
+    AuthController.fetchUser().catch(() => new Router().go('/'));
   }
 
   onSaveProfile() {
@@ -52,11 +43,12 @@ export class ProfilePage extends Block<IProfile> {
     );
     if (data) {
       UserController.updateProfile(data as IProfileData)
+        // eslint-disable-next-line no-alert
         .then(() => alert('Профиль успешно обновлен!'))
+        // eslint-disable-next-line no-alert
         .catch((error) => alert(`Ошибка выполнения запроса обновления профиля! ${error ? error.reason : ''}`));
     }
   }
-
 
   render() {
     const email = !this.props.email ? undefined : `"${this.props.email}"`;
@@ -66,15 +58,15 @@ export class ProfilePage extends Block<IProfile> {
     const displayName = !this.props.display_name ? undefined : `"${this.props.display_name}"`;
     const phone = !this.props.phone ? undefined : `"${this.props.phone}"`;
     const avatar = !this.props.avatar ? undefined : `"${this.props.avatar}"`;
-    // const avatar = !this.props.avatar ? '"https://previews.123rf.com/images/denizjdazel/denizjdazel1902/denizjdazel190200045/124841367-.jpg?fj=1"' : `"${this.props.avatar}"`;
-    // {{{ Avatar changeAvatar=${funk} }}} - так было (убрал чтобы не выкидывал ошибку)
+
     // language=hbs
     return `
-    <main class='allHtml'>
+
+    <main class='allHtml_profile'>
 
     <div class="profile">
     <div class="profile__item">
-  {{{ Button_back }}}
+  {{{ ButtonBack }}}
     </div>
   
     <div class="profile__item">
@@ -110,16 +102,14 @@ export class ProfilePage extends Block<IProfile> {
 {{{ Button  style_btn="profile__btn"  buttonId="button-save-profile" value="Сохранить" onClick=onClick }}}
 </div>
 <nav class="nav-block">
-{{{ Text_transition  style_text="profile__text" text='Редактировать пароль' href="/profilePage_red" }}}
-{{{ Text_transition  style_text="profile__text" text='На главную' href="/messages" }}}
+{{{ Link  style_text="profile__text" text='Редактировать пароль' href="/settings_red" }}}
+{{{ Link  style_text="profile__text" text='На главную' href="/messages" }}}
 </nav>
           </form>
         </div>
       </div>
       </main>
 
-
-        
     `;
   }
 }

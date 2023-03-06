@@ -4,19 +4,18 @@ import { AuthorizationPage } from './pages/authorization/authorization';
 import { registerComponent } from './common/registerComponent';
 import Button from './components/Button';
 import Avatar from './components/Avatar';
-import { Avatar_mini } from './components/Avatar_mini/avatar_mini';
 import Input from './components/Input';
 import InputField from './components/InputField';
 import Chat from './components/Chat';
 import Message from './components/Message';
 import ProfilePage from './pages/profile';
-import { Button_chat } from './components/Button_chat/Button_chat';
+import { ButtonChat } from './components/ButtonChat/ButtonChat';
 import { InputMas } from './components/InputMas/InputMas';
 import { ErrorForm } from './components/ErrorForm/errorForm';
-import { ProfilePage_red } from './pages/profile_red/profile';
-import { Text_transition } from './components/Text_transition/Text_transition';
+import { ProfilePageRed } from './pages/profile_red/profile_red';
 import { Title } from './components/Title/title';
-import { Button_back } from './components/Button_back/Button_back';
+import { TextTransition } from './components/TextTransition/TextTransition';
+import Link from './components/Link';
 // eslint-disable-next-line import/no-cycle
 import MessagesPage from './pages/messages';
 import { WS } from './common/Websockets';
@@ -25,14 +24,13 @@ import { InputFieldProfile } from './components/InputFieldProfile/InputFieldProf
 registerComponent(Button, 'Button');
 registerComponent(InputFieldProfile, 'InputFieldProfile');
 registerComponent(Avatar, 'Avatar');
-registerComponent(Button_back, 'Button_back');
+registerComponent(Link, 'Link');
 registerComponent(Input, 'Input');
 registerComponent(InputField, 'InputField');
 registerComponent(InputMas, 'InputMas');
-registerComponent(Text_transition, 'Text_transition');
 registerComponent(Title, 'Title');
-registerComponent(Avatar_mini, 'Avatar_mini');
-registerComponent(Button_chat, 'Button_chat');
+registerComponent(TextTransition, 'TextTransition');
+registerComponent(ButtonChat, 'ButtonChat');
 
 registerComponent(Chat, 'Chat');
 registerComponent(Message, 'Message');
@@ -43,10 +41,10 @@ export const ws = new WS();
 router.use('/', AuthorizationPage)
   .use('/sign-up', RegistrationPage)
   .use('/settings', ProfilePage)
-  .use('/settings_red', ProfilePage_red)
-  .use('/messenger ', MessagesPage)
-  .use('/error500', ErrorForm)
+  .use('/settings_red', ProfilePageRed)
+  .use('/messages', MessagesPage)
   .use('/error404', ErrorForm)
+  .use('/error500', ErrorForm)
   .use('/', AuthorizationPage);
 
 router.start();

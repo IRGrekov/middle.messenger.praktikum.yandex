@@ -1,6 +1,6 @@
 import { withStore } from '../../common/Store';
-import { ProfilePage } from './profile';
+import { ProfilePageRed } from './profile_red';
 
 const withUser = withStore((state) => ({ ...state.currentUser }));
 
-export default withUser(ProfilePage);
+export default withUser(ProfilePageRed);

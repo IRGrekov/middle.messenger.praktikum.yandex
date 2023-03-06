@@ -1,3 +1,4 @@
+/* eslint-disable prefer-promise-reject-errors */
 const Method = {
   GET: 'GET',
   POST: 'POST',
@@ -11,17 +12,16 @@ interface Options {
   data?: any;
 }
 
-type IData = Record<string, string>
+type IData = Record<string, string>;
 
 function queryStringify(data: IData) {
   if (typeof data !== 'object') {
-    throw new Error('Data must be object')
+    throw new Error('Data must be object');
   }
 
-  const keys = Object.keys(data)
-  return keys.reduce((result, key, index) => {
-    return `${result}${key}=${data[key]}${index < keys.length - 1 ? '&' : ''}`
-  }, '?')
+  const keys = Object.keys(data);
+
+  return keys.reduce((result, key, index) => `${result}${key}=${data[key]}${index < keys.length - 1 ? '&' : ''}`, '?');
 }
 export default class HTTPTransport {
   static API_URL = 'https://ya-praktikum.tech/api/v2';
@@ -70,9 +70,10 @@ export default class HTTPTransport {
 
     return new Promise((resolve, reject) => {
       const xhr = new XMLHttpRequest();
-      const isGet = method === Method.GET
-      xhr.open(method, isGet && !!data ? `${url}${queryStringify(data)}` : url)
-      xhr.open(method, url);
+
+      const isGet = method === Method.GET;
+      xhr.open(method, isGet && !!data ? `${url}${queryStringify(data)}` : url);
+      // xhr.open(method, url);
 
       xhr.onreadystatechange = () => {
         if (xhr.readyState !== 4) {
@@ -85,10 +86,13 @@ export default class HTTPTransport {
         }
       };
 
+      console.log('------- 1');
+
       xhr.onabort = () => reject({ reason: 'abort' });
       xhr.onerror = () => reject({ reason: 'network error' });
       xhr.ontimeout = () => reject({ reason: 'timeout' });
 
+      console.log('------- 2', FormData);
       if (!(data instanceof FormData)) {
         xhr.setRequestHeader('Content-Type', 'application/json');
       }
@@ -96,10 +100,13 @@ export default class HTTPTransport {
       xhr.withCredentials = true;
       xhr.responseType = 'json';
 
+      console.log('------- 3');
       if (method === Method.GET || !data) {
+        console.log('------- 4');
         xhr.send();
       } else {
-        const body = data instanceof FormData ? data : JSON.stringify(data)
+        console.log('------- 5');
+        const body = data instanceof FormData ? data : JSON.stringify(data);
         xhr.send(body);
       }
     });

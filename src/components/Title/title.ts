@@ -7,15 +7,8 @@ interface ITitle {
   style: string;
 }
 
-type TTitle = Omit<ITitle, 'onClick'> & {
-  events: {
-    click: Function,
-  },
-};
-
-export class Title extends Block<TTitle> {
-  constructor({ text_title, style }: ITitle
-  ) {
+export class Title extends Block {
+  constructor({ text_title, style }: ITitle) {
     super({
       text_title,
       style,

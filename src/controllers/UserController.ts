@@ -1,4 +1,5 @@
-import UserAPI, { IProfileData, changePasswordData } from '../api/UserAPI';
+import { ChangePasswordData } from '../api/AuthAPI';
+import UserAPI, { IProfileData } from '../api/UserAPI';
 import { store } from '../common/Store';
 
 class UserController {
@@ -12,8 +13,8 @@ class UserController {
     await this.api.update(profile);
   }
 
-  async changePassword(data: changePasswordData) {
-    //console.log("222")
+  async changePassword(data: ChangePasswordData) {
+    console.log('222');
     await this.api.changePassword(data);
   }
 
@@ -21,8 +22,6 @@ class UserController {
     const userData = await this.api.changeAvatarData(data);
     store.set('currentUser', userData);
   }
-
 }
 
 export default new UserController();
-

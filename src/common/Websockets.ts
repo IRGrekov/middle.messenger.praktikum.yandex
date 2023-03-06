@@ -22,7 +22,7 @@ export class WS {
     this.getLastMessages();
 
     /*
-     Функция для поддержания соединения по Websocket 
+     Функция для поддержания соединения по Websocket
      */
     if (!this.timerId) {
       this.timerId = setInterval(() => {
@@ -47,12 +47,13 @@ export class WS {
 
   private onReceiveMessage(event: MessageEvent) {
     console.log('Получены данные', event.data);
-    let data
+    let data;
     try {
       data = JSON.parse(event.data);
     } catch (error) {
       console.error(error);
-      return
+
+      return;
       // Expected output: ReferenceError: nonExistentFunction is not defined
       // (Note: the exact output may be browser-dependent)
     }
@@ -121,7 +122,7 @@ export class WS {
     http
       .post<{ token: string }>('', { mode: 'cors', credentials: 'include' })
       .then((data) => {
-        /* 
+        /*
         Если до этого было соденинение по WS с другим чатом  то удаляем старые обработчики событий
          */
         if (this.chatId !== undefined) {
